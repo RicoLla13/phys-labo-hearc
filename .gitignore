@@ -1,0 +1,13 @@
+# Exclude all
+*
+!*/
+!.gitignore
+
+# Document building
+!*.tex
+!*.pdf
+!*.csv
+
+# Images
+!*.png
+!*.jpg
