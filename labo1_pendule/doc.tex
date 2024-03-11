@@ -70,6 +70,7 @@
         \item \textbf{T} - la période du pendule
         \item \textbf{m} - masse d'objet
         \item \textbf{s} - la position de la masse
+        \item \textbf{g} - l'accélération gravitationnelle
     \end{itemize}
     \subsection{La formule fondamentale du pendule}
     La position de la masse suspendue est calculée à l'aide de la formule suivante: 
@@ -83,14 +84,20 @@
     où $-mgsin(\theta)$ est l'équation obtenue pour la seule force agissant sur l'objet (P - poids), et $\frac{d^2s}{dt^2}$ est l'accélération totale du système, obtenue en dérivant deux fois la position. \\
     On sait que $\frac{d^2s}{dt^2} = L\frac{d^2\tetha}{dt^2}$ (L - constante). Alors:
     \begin{align*}
-        -mgsin(\theta)=mL\fract{d^2\theta}{dt^2} \\
-        -\frac{g}{L}sin(\theta)=\fract{d^2\theta}{dt^2} \\
+        -mgsin(\theta)=mL\frac{d^2\theta}{dt^2} \\
+        -\frac{g}{L}sin(\theta)=\frac{d^2\theta}{dt^2} \\
         \frac{d^2\theta}{dt^2}+\frac{g}{L}sin(\theta)=0
     \end{align*}
-    Pour notre expérience, nous n'utilisons que de petits angles, ce qui nous permet de faire l'approximation suivante: $sin(\theta) \approx \theta$. Le pendule simple devient alors un mouvement harmonique, décrit par l'équation suivante:
+    Pour notre expérience, nous n'utilisons que de petits angles, ce qui nous permet de faire l'approximation suivante: $sin(\theta) \approx \theta$. Le pendule simple devient alors un système oscillatoire harmonique, décrit par l'équation suivante:
     \begin{empheq}[box={\mymath}]{equation*}
-        \frac{d^2\theta}{dt^2}+\frac{g}{l}\theta=0
+        \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
     \end{empheq}
+    En comparant cette équation avec l'équation du mouvement oscillatoire harmonique ($\frac{d^2x}{dt^2}+\omega^2x(t)=0$), nous obtenons:
+    \begin{empheq}[box={\mymath}]{gather*}
+        \omega=\sqrt{\fract{g}{L}} \\
+        T=\fract{2\pi}{\omega}=2\pi\sqrt{\frac{L}{g}}
+    \end{gather*} 
+
     \section{Manipulation}
 
     \section{Mesures}
