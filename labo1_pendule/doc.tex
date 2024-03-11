@@ -1,11 +1,15 @@
 \documentclass[12pt,a4paper]{article}
 
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{tikz}
 \usepackage{pgfplotstable}
 \usepackage{titlesec}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{empheq}
 
 \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
@@ -16,6 +20,22 @@
 \title{Étude du Pendule Simple : Analyse des Oscillations Harmoniques}
 \author{Cătălin Bozan, Liviu Arsenescu}
 \date{05.03.2024}
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter,
+    math upper,
+    tcbox raise base,
+    enhanced,
+    colframe=black,
+    colback=white,
+    boxrule=1pt,
+    drop shadow={
+        shadow xshift=3pt,
+        shadow yshift=-3pt,
+        opacity=1
+    },
+    #1
+}
 
 \begin{document}
     \pagenumbering{gobble}
@@ -41,19 +61,41 @@
         \item Vérifier la formule de la période d'un pendule
         \item Trouver l'accélération gravitationnelle de la terre
     \end{itemize}
-    \newpage
 
     \section{Éléments théoriques}
-    \newpage
-
+    \subsection{Les différentes quantités rencontrées}
+    \begin{itemize}
+        \item $\bm{\theta}$ - l'angle entre la verticale et le pendule
+        \item \textbf{L} - la longueur du fil
+        \item \textbf{T} - la période du pendule
+        \item \textbf{m} - masse d'objet
+        \item \textbf{s} - la position de la masse
+    \end{itemize}
+    \subsection{La formule fondamentale du pendule}
+    La position de la masse suspendue est calculée à l'aide de la formule suivante: 
+    \begin{equation*}
+        s=L\theta,
+    \end{equation*}
+    La deuxième loi de Newton ($\sum_{i=1}^{n} F_i=ma$) selon l'axe tangentiele s'écrit:
+    \begin{equation*}
+        -mgsin(\theta) = m\frac{d^2s}{dt^2}
+    \end{equation*}
+    où $-mgsin(\theta)$ est l'équation obtenue pour la seule force agissant sur l'objet (P - poids), et $\frac{d^2s}{dt^2}$ est l'accélération totale du système, obtenue en dérivant deux fois la position. \\
+    On sait que $\frac{d^2s}{dt^2} = L\frac{d^2\tetha}{dt^2}$ (L - constante). Alors:
+    \begin{align*}
+        -mgsin(\theta)=mL\fract{d^2\theta}{dt^2} \\
+        -\frac{g}{L}sin(\theta)=\fract{d^2\theta}{dt^2} \\
+        \frac{d^2\theta}{dt^2}+\frac{g}{L}sin(\theta)=0
+    \end{align*}
+    Pour notre expérience, nous n'utilisons que de petits angles, ce qui nous permet de faire l'approximation suivante: $sin(\theta) \approx \theta$. Le pendule simple devient alors un mouvement harmonique, décrit par l'équation suivante:
+    \begin{empheq}[box={\mymath}]{equation*}
+        \frac{d^2\theta}{dt^2}+\frac{g}{l}\theta=0
+    \end{empheq}
     \section{Manipulation}
-    \newpage
 
     \section{Mesures}
-    \newpage
 
     \section{Analyse des mesures et résultats}
-    \newpage
 
     \section{Synthèse et conclusion}
 \end{document}
