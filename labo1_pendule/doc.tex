@@ -1,31 +1,46 @@
-\documentclass[30pt, a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{tikz}
 \usepackage{pgfplotstable}
+\usepackage{titlesec}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 
 \renewcommand{\contentsname}{Table des Matières}
-\renewcommand{\baselinestretch}{1.5}
+%\renewcommand{\baselinestretch}{1.5}
 
 \title{Étude du Pendule Simple : Analyse des Oscillations Harmoniques}
 \author{Cătălin Bozan, Liviu Arsenescu}
-\date{12.03.2024}
+\date{05.03.2024}
 
 \begin{document}
     \pagenumbering{gobble}
-    \maketitle
-    \begin{center}
-        \textbf{Rapport de Laboratoire}
-    \end{center}
-    \newpage
-    \tableofcontents
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{\fill}
+            \Huge \textbf{Étude du Pendule Simple :} \\
+            \Huge \textbf{Analyse des Oscillations Harmoniques} \\
+            \Large Rapport du Laboratoire \\
+            \vspace{\fill}
+            \Large Cătălin Bozan, Liviu Arsenescu \\
+            05.03.2024
+
+            \vspace*{\fill}
+        \end{center}
+    \end{titlepage}
     \newpage
 
     \pagenumbering{arabic}
     \section{Objectifs du laboratoire}
-    Sample text sample text.
+    \begin{itemize}
+        \item Démontrer expérimentalement le fait que la période ne dépend pas de la masse, lorsque la longueur est constante
+        \item Vérifier la formule de la période d'un pendule
+        \item Trouver l'accélération gravitationnelle de la terre
+    \end{itemize}
     \newpage
 
     \section{Éléments théoriques}
