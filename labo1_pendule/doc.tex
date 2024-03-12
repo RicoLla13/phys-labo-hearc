@@ -108,6 +108,24 @@
     \end{itemize}   
 
     \section{Manipulation}
+    
+    %figure pendule
+    \begin{tikzpicture}
+        % Table
+        \draw (0, 0) rectangle (4, 0.5);
+        
+        % String
+        \draw (2, 0.5) -- (2, 3);
+        
+        % Pendulum bob
+        \filldraw[fill=gray!50, draw=black] (2, 3) circle (0.3);
+        
+        % Pendulum rod
+        \draw[line width=1.5pt] (2, 0.5) -- (2, 2.7);
+        
+        % Angle notation
+        \draw[<->] (2.5, 0.5) arc (0:75:0.5) node[midway, right] {$\theta$};
+    \end{tikzpicture}
 
     \section{Mesures}
 
