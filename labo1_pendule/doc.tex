@@ -12,9 +12,22 @@
 \usepackage{empheq}
 \usepackage{booktabs}
 \usepackage{caption}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\usepackage{graphicx}
+\graphicspath{ {../res/images/} }
+
 
 \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
 
 \renewcommand{\contentsname}{Table des Matières}
 %\renewcommand{\baselinestretch}{1.5}
@@ -54,6 +67,9 @@
             \vspace*{\fill}
         \end{center}
     \end{titlepage}
+
+    \tableofcontents
+
     \newpage
 
     \pagenumbering{arabic}
@@ -125,19 +141,32 @@
 
     \section{Manipulation}
     \subsection{Matériel}
-    \begin{itemize}
-        \item Socle
-        \item Tiges
-        \item Noix-double
-        \item Tige-pince
-        \item Diverses masses
-        \item Fil non élastique
-        \item Ruban métrique
-        \item Camera vidéo
-        \item Ordinateur
-    \end{itemize}
+    \begin{minipage}{0.5\textwidth}
+        \begin{itemize}
+            \item Socle
+            \item Tiges
+            \item Noix-double
+            \item Tige-pince
+            \item Diverses masses
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{itemize}
+            \item Fil non élastique
+            \item Ruban métrique
+            \item Camera vidéo
+            \item Ordinateur
+        \end{itemize}
+    \end{minipage}
     \subsection{Configuration}
-    La tige est fixée verticalement au socle. En utilisant la noix-double, on fixe horizontalement
+    La tige est fixée verticalement au socle. En utilisant la noix-double, on fixe horizontalement un'autre tige qui dispose d'un pince à l'extrémité. On a fait une boucle à l'extrémité de la ficelle et l'avons utilisée pour suspendre le poids.
+    Ensuite, on a utilisé la pince pour saisir la corde, ce qui nous permet de modifier la longueur du pendule. Une balance a été utilisée pour peser les poids. \\
+    Un téléphone portable équipé d'une caméra capable d'enregistrer 60 images par seconde et le programme d'édition vidéo \href{https://kdenlive.org}{Kdenlive} ont été utilisés pour enregistrer et chronométrer la période du pendule. \\
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=7cm]{laboPhysiqueBPendule.png}
+    \end{figure}
 
     \section{Mesures}
     \subsection{Manière de mesurer}
