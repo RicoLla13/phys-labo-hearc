@@ -11,6 +11,7 @@
 \tcbuselibrary{skins}
 \usepackage{empheq}
 \usepackage{booktabs}
+\usepackage{caption}
 
 \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
@@ -156,15 +157,30 @@
     Le reste des valeurs peut être représenté dans un tableau:
     \begin{table}[htbp]
         \centering
-        \begin{tabular}{c|c|c|c}
-            \textbf{No.} & \textbf{m(g)} & \textbf{7T(s)} & \textbf{T(s)} \\
-            \toprule
-            1 & 19.96 & 12.52 & 1.788 \\
-            2 & 49.76 & 12.60 & 1.800 \\
-            3 & 99.63 & 12.55 & 1.792 \\
-            4 & 199.69 & 12.57 & 1.795 \\
-            5 & 499.46 & 12.52 & 1.788 \\
-        \end{tabular}
+        \begin{minipage}{0.4\textwidth}
+            \begin{tabular}{c|c|c|c}
+                \textbf{No.} & \textbf{m(g)} & \textbf{7T(s)} & \textbf{T(s)} \\
+                \toprule
+                1 & 19.96 & 12.52 & 1.788 \\
+                2 & 49.76 & 12.60 & 1.800 \\
+                3 & 99.63 & 12.55 & 1.792 \\
+                4 & 199.69 & 12.57 & 1.795 \\
+                5 & 499.46 & 12.52 & 1.788 \\
+            \end{tabular}
+        \end{minipage}%
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \captionsetup{labelformat=empty}
+            \caption{Légende}
+            \begin{tabular}{rl}
+                \toprule
+                Symb. & description \\
+                \midrule
+                m(g) & masse en grammes \\
+                7T(s) & mesure de 7 périodes en secondes \\
+                T(s) & période en secondes \\
+            \end{tabular}
+        \end{minipage}
     \end{table}
     \section{Synthèse et conclusion}
 \end{document}
