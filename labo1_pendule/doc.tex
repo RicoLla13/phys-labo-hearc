@@ -10,6 +10,7 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
 \usepackage{empheq}
+\usepackage{booktabs}
 
 \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
@@ -140,10 +141,31 @@
     \section{Mesures}
     \subsection{Manière de mesurer}
     Pour reduire l'incertitude, on n'a pas utilisé de chronomètre pour mesurer le temps, mais on a pris une vidéo avec une caméra de 60 cadres par seconde. Ensuite, on a analysé la vidéo à l'aide d'un logiciel de montage, pour mieux voir les cadres du début et de la fin. \\
-    Bien que les instructions du laboratoire indiquent que nous devrions enregistrer 10 périodes, pendant le laboratoire on a eu une erreur avec les vidéos, ce qui nous a permis d'enregistrer seulement 7 périodes. Cela n'a pas eu un grand impact sur l'incertitude.
-
+    Bien que les instructions du laboratoire indiquent que nous devrions enregistrer 10 périodes, pendant le laboratoire on a eu une erreur avec les vidéos, ce qui nous a permis d'enregistrer seulement 7 périodes. Cela n'a pas eu un grand impact sur l'incertitude. \\
+    Pour le reste des mesures(longueur, masse), on a suivi les instructions de laboratoire.
     \section{Analyse des mesures et résultats}
-
+    \subsection{Période d'oscillation \textit{T} en fonction de la masse \textit{m}}
+    Pour cette expérience, nous avons une longueur fixe pour le fil et on a augmenté la masse. \\
+    Les valeurs suivantes restent constantes pour chaque mesure:
+    \begin{itemize}
+        \item Longueur: $L=80.0cm$
+        \item Incertitude de la longueur: $\Delta L=\pm 0.4cm$
+        \item Incertitude de la masse: $\Delta m=\pm 0.01g$
+        \item Incertitude de 7 périodes: $\Delta 7T=\pm 0.05s \Rightarrow \Delta T=\pm 0.008s$
+    \end{itemize}
+    Le reste des valeurs peut être représenté dans un tableau:
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{c|c|c|c}
+            \textbf{No.} & \textbf{m(g)} & \textbf{7T(s)} & \textbf{T(s)} \\
+            \toprule
+            1 & 19.96 & 12.52 & 1.788 \\
+            2 & 49.76 & 12.60 & 1.800 \\
+            3 & 99.63 & 12.55 & 1.792 \\
+            4 & 199.69 & 12.57 & 1.795 \\
+            5 & 499.46 & 12.52 & 1.788 \\
+        \end{tabular}
+    \end{table}
     \section{Synthèse et conclusion}
 \end{document}
 
