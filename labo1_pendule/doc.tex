@@ -61,7 +61,7 @@
             \Huge \textbf{Analyse des Oscillations Harmoniques} \\
             \Large Rapport du Laboratoire \\
             \vspace{\fill}
-            \Large Cătălin Bozan, Liviu Arsenescu \\
+            \Large Liviu Arsenescu, Cătălin Bozan \\
             05.03.2024
 
             \vspace*{\fill}
@@ -181,7 +181,7 @@
         \item Longueur: $L=80.0cm$
         \item Incertitude de la longueur: $\Delta L=\pm 0.4cm$
         \item Incertitude de la masse: $\Delta m=\pm 0.01g$
-        \item Incertitude de 7 périodes: $\Delta 7T=\pm 0.05s \Rightarrow \Delta T=\pm 0.008s$
+        \item Incertitude de 7 périodes: $\Delta 7T=\pm 0.02s \Rightarrow \Delta T=\pm 0.003s$
     \end{itemize}
     Le reste des valeurs peut être représenté dans un tableau:
     \begin{table}[htbp]
@@ -210,7 +210,49 @@
             }
         \end{minipage}
     \end{table} \\
-    On peut utiliser cet ensemble de données pour faire un graphique:
+    On peut utiliser cet ensemble de données pour faire un graphique: \\
+    \pgfplotstableread[col sep=comma]{plotData/plotExpIw.csv}\expIdata
+    \noindent\begin{tikzpicture}[scale=1]
+        % Scatter plot
+        \begin{axis}[
+            xlabel={$m$},
+            ylabel={$T$},
+            legend pos=north outside,
+            legend style={at={(0.5,1.05)}, anchor=south},
+            grid=both,
+            width=1\textwidth,
+            height=0.3\textheight,
+            x tick label style={
+                /pgf/number format/.cd,
+                precision=2,
+                fixed,
+                fixed zerofill,
+            },
+            y tick label style={
+                /pgf/number format/.cd,
+                precision=3,
+                fixed,
+                fixed zerofill,
+            },
+            xmin=15,
+            xmax=515,
+            ymin=1.775,
+            ymax=1.815,
+        ]
+            \addplot+[only marks, mark=x, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] table[x=m, x error=err_m, y=T, y error=err_T] {\expIdata};
+
+            % Linear regression line
+            \addplot [red, thick] table[
+                y={create col/linear regression={y=T}}
+            ] {\expIdata};
+            \xdef\slope{\pgfplotstableregressiona}
+            \xdef\intercept{\pgfplotstableregressionb}
+
+            % Add the equation of the line
+            \addlegendentry{Data}
+            \addlegendentry{Linear Regression: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
+        \end{axis}
+    \end{tikzpicture}
     \section{Synthèse et conclusion}
     Suite aux deux expériences et aux mesures effectuées, on constate que, comme le dit la théorie, la période du pendule varie en fonction de la longueur de la corde, et qu'elle est indépendante du poids. \\
     En outre, nous avons réussi à déduire la constante d'accélération gravitationnelle qui est très proche de la constante réelle $\approx 9.81$.
