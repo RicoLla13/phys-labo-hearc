@@ -57,7 +57,7 @@
     \pagenumbering{arabic}
     \section{Objectifs du laboratoire}
     \begin{itemize}
-        \item Démontrer expérimentalement le fait que la période ne dépend pas de la masse, lorsque la longueur est constante
+        \item Démontrer expérimentalement le fait que la période ne dépend pas de la masse
         \item Vérifier la formule de la période d'un pendule
         \item Trouver l'accélération gravitationnelle de la terre
     \end{itemize}
@@ -82,11 +82,11 @@
         -mgsin(\theta) = m\frac{d^2s}{dt^2}
     \end{equation*}
     où $-mgsin(\theta)$ est l'équation obtenue pour la seule force agissant sur l'objet (P - poids), et $\frac{d^2s}{dt^2}$ est l'accélération totale du système, obtenue en dérivant deux fois la position. \\
-    On sait que $\frac{d^2s}{dt^2} = L\frac{d^2\tetha}{dt^2}$ (L - constante). Alors:
+    On sait que $\frac{d^2s}{dt^2} = L\frac{d^2\theta}{dt^2}$ (L - constante). Alors:
     \begin{align*}
-        -mgsin(\theta)=mL\frac{d^2\theta}{dt^2} \\
-        -\frac{g}{L}sin(\theta)=\frac{d^2\theta}{dt^2} \\
-        \frac{d^2\theta}{dt^2}+\frac{g}{L}sin(\theta)=0
+        -mgsin(\theta)&=mL\frac{d^2\theta}{dt^2} \\
+        -\frac{g}{L}sin(\theta)&=\frac{d^2\theta}{dt^2} \\
+        \frac{d^2\theta}{dt^2}+\frac{g}{L}sin(\theta)&=0
     \end{align*}
     Pour notre expérience, nous n'utilisons que de petits angles, ce qui nous permet de faire l'approximation suivante: $sin(\theta) \approx \theta$. Le pendule simple devient alors un système oscillatoire harmonique, décrit par l'équation suivante:
     \begin{empheq}[box={\mymath}]{equation*}
@@ -97,6 +97,15 @@
         \omega=\sqrt{\frac{g}{L}} \\
         T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{L}{g}}
     \end{gather*} 
+    Cette approche mathématique permet de tirer les conclusions suivantes:
+    \begin{itemize}
+        \item La période ne dépends pas de la masse de l'objet
+        \item La période est proportionnelle à la raacine carrée de la longueur
+        \item Nous pouvons estimer expérimentalement la norme d'accélération gravitationnelle à l'aide de la formule: 
+        \begin{equation*}
+            g=\frac{4\pi^2L}{T^2}
+        \end{equation*}
+    \end{itemize}   
 
     \section{Manipulation}
 
