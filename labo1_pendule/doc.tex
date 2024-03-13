@@ -220,7 +220,9 @@
             }
         \end{minipage}
     \end{table} \\
+    \newpage
     On peut utiliser cet ensemble de données pour faire un graphique: \\
+    \\
     \pgfplotstableread[col sep=comma]{plotData/plotExpI.csv}\expIdata
     \begin{tikzpicture}[scale=1]
         % Scatter plot
@@ -274,23 +276,28 @@
         \item Incertitude de la masse: $\Delta m=\pm0.01g$
         \item Incertitude de 7 périodes: $\Delta 7T=\pm0.05s\Rightarrow \Delta T=\pm0.008s$
     \end{itemize}
+    Pour calculer l'incertitude de $T^2$, on a utilisé la formule suivante:
+    \begin{equation*}
+        \Delta T^2 = 2 \Delta T\cdot T
+    \end{equation*}
+    \newpage
     Le reste des valeurs peut être représenté dans un tableau:
     \begin{table}[htbp]
         \centering
         \begin{minipage}{0.55\textwidth}
             \begin{tabular}{c|c|c|c|c}
-                \textbf{No.} & \textbf{L(cm)} & \textbf{$\bm{\Delta}$L(cm)} & \textbf{7T(s)} & \textbf{T(s)} \\
+                \textbf{No.} & \textbf{L(cm)} & \textbf{$\bm{\Delta}$L(cm)} & \textbf{T(s)} & \textbf{$\bm{\Delta T^2(s^2)}$} \\
                 \toprule
-                1 & 10 & 3 & 4.48 & 0.640 \\
-                2 & 20 & 3 & 6.20 & 0.885 \\
-                3 & 30 & 3 & 7.68 & 1.097 \\
-                4 & 40 & 4 & 8.85 & 1.264 \\
-                5 & 50 & 4 & 9.93 & 1.418 \\
-                6 & 60 & 4 & 10.83 & 1.547 \\
-                7 & 70 & 4 & 11.77 & 1.681 \\
-                8 & 80 & 5 & 12.55 & 1.792 \\
-                9 & 90 & 5 & 13.31 & 1.901 \\
-                10 & 90.5 & 5 & 14.05 & 2.007 \\
+                1 & 10 & 0.3 & 0.640 & 0.011 \\
+                2 & 20 & 0.3 & 0.885 & 0.013 \\
+                3 & 30 & 0.3 & 1.097 & 0.020 \\
+                4 & 40 & 0.4 & 1.264 & 0.026 \\
+                5 & 50 & 0.4 & 1.418 & 0.033 \\
+                6 & 60 & 0.4 & 1.547 & 0.039 \\
+                7 & 70 & 0.4 & 1.681 & 0.046\\
+                8 & 80 & 0.5 & 1.792 & 0.048 \\
+                9 & 90 & 0.5 & 1.901 & 0.058\\
+                10 & 90.5 & 0.5 & 2.007 & 0.065 \\
             \end{tabular}
         \end{minipage}%
         \begin{minipage}{0.45\textwidth}
@@ -301,14 +308,78 @@
                     \toprule
                     L(cm) & - & longueur en centimetres \\
                     $\Delta$L(cm) & - & incertitude de la longueur \\
-                    7T(s) & - & 7 périodes en secondes \\
                     T(s) & - & période en secondes \\
+                    $\Delta$T^2(s^2) & - & incertitude de T^2 \\
                 \end{tabular}%
             }
         \end{minipage}
     \end{table} \\
+    On peut utiliser cet ensemble de données pour faire un graphique: \\
+    \\
+    \pgfplotstableread[col sep=comma]{plotData/plotExpII.csv}\expIdata
+    \begin{tikzpicture}[scale=1]
+        % Scatter plot
+        \begin{axis}[
+            xlabel={$L$},
+            ylabel={$T^2$},
+            legend pos=north east,
+            legend style={at={(0.35,0.75)}, anchor=south},
+            grid=both,
+            width=1\textwidth,
+            height=0.3\textheight,
+            x tick label style={
+                /pgf/number format/.cd,
+                precision=1,
+                fixed,
+                fixed zerofill,
+            },
+            y tick label style={
+                /pgf/number format/.cd,
+                precision=3,
+                fixed,
+                fixed zerofill,
+            },
+            xmin=5,
+            xmax=95,
+            ymin=0.2,
+            ymax=4.5,
+        ]
+            \addplot+[only marks, mark=x, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] table[x=L, x error=err_L, y=T2, y error=err_T2] {\expIdata};
+
+            % Linear regression line
+            \addplot [red, thick] table[
+                y={create col/linear regression={y=T2}}
+            ] {\expIdata};
+            \xdef\slope{\pgfplotstableregressiona}
+            \xdef\intercept{\pgfplotstableregressionb}
+
+            % Add the equation of the line
+            \addlegendentry{Données}
+            \addlegendentry{Régr. Lin.: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
+        \end{axis}
+    \end{tikzpicture} \\
+    Après l'analyse du graphique, on constate plusieurs choses:
+    \begin{itemize}
+        \item L'imprécision des mesures augmente de plus en plus quand les valeurs augmentent (à cause de $T^2$)
+        \item On a, en effet, une dépendance linéaire de $\sqrt{L}$ pour la période (ou une dépendance linéaire de L pour $T^2$)
+        \item Avec la pente obtenue, on peut estimer l'accélération gravitationnelle de la terre
+    \end{itemize}
+    Pour calculer l'accélération gravitationnelle, on procède à l'approche mathématique suivante (on appelle \textit{a} la pente de $T^2(L)$):
+    \begin{align*}
+        g=\frac{4\pi^2 L}{T^2} &\Rightarrow g=\frac{4\pi^2}{a} \\
+        g&\approx9.54ms^{-2}
+    \end{align*}
+    On estime $\Delta a=\pm0.01$, alors:
+    \begin{align*}
+        g=\frac{4\pi^2}{a} &\Rightarrow \Delta g=4\pi^2 \Delta a \\
+        \Delta g &= \pm0.40 ms^{-2}
+    \end{align*}
+    Donc le résultat final est:
+    \begin{empheq}[box={\mymath}]{equation*}
+        g=(9.5 \pm 0.4)ms^{-2}
+    \end{equation*}
     \section{Synthèse et conclusion}
     Suite aux deux expériences et aux mesures effectuées, on constate que, comme le dit la théorie, la période du pendule varie en fonction de la longueur de la corde, et qu'elle est indépendante du poids. \\
-    En outre, nous avons réussi à déduire la constante d'accélération gravitationnelle qui est très proche de la constante réelle $\approx 9.81$.
+    En outre, nous avons réussi à déduire la constante d'accélération gravitationnelle $(g=(9.5 \pm 0.4)ms^{-2})$ qui est très proche de la constante réelle $\approx 9.81$.
 \end{document}
 
