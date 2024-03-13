@@ -228,7 +228,7 @@
             xlabel={$m$},
             ylabel={$T$},
             legend pos=north east,
-            legend style={at={(0.65,0.75)}, anchor=south},
+            legend style={at={(0.7,0.75)}, anchor=south},
             grid=both,
             width=1\textwidth,
             height=0.3\textheight,
@@ -259,10 +259,11 @@
             \xdef\intercept{\pgfplotstableregressionb}
 
             % Add the equation of the line
-            \addlegendentry{Data}
-            \addlegendentry{Linear Regression: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
+            \addlegendentry{Données}
+            \addlegendentry{Régr. Lin.: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
         \end{axis}
     \end{tikzpicture}
+
     \section{Synthèse et conclusion}
     Suite aux deux expériences et aux mesures effectuées, on constate que, comme le dit la théorie, la période du pendule varie en fonction de la longueur de la corde, et qu'elle est indépendante du poids. \\
     En outre, nous avons réussi à déduire la constante d'accélération gravitationnelle qui est très proche de la constante réelle $\approx 9.81$.
