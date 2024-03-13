@@ -55,6 +55,8 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\includegraphics[width=4cm]{hearclogo.png}}
+\lhead{\thepage}
+\setlength{\headsep}{30pt}
 
 \begin{document}
     \pagenumbering{gobble}
@@ -76,8 +78,8 @@
         \end{center}
     \end{titlepage}
 
+    \thispagestyle{empty}
     \tableofcontents
-
     \newpage
 
     \pagenumbering{arabic}
