@@ -1,0 +1,110 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplotstable}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{empheq}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+    }
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+
+\renewcommand{\contentsname}{Table des Matières}
+%\renewcommand{\baselinestretch}{1.5}
+
+\title{title}
+\author{Liviu Arsenescu, Cătălin Bozan}
+\date{date}
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter,
+    math upper,
+    tcbox raise base,
+    enhanced,
+    colframe=black,
+    colback=white,
+    boxrule=1pt,
+    drop shadow={
+        shadow xshift=3pt,
+        shadow yshift=-3pt,
+        opacity=1
+    },
+    #1
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=4cm]{hearclogo.png}}
+\lhead{\thepage}
+\setlength{\headsep}{30pt}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{\fill}
+            \Huge \textbf{title :} \\
+            \Huge \textbf{subtitle} \\
+            \Large Rapport du Laboratoire \\
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=7cm]{hearclogo.png}
+            \end{figure}
+            \vspace{\fill}
+            \Large Liviu Arsenescu, Cătălin Bozan \\
+            date
+
+            \vspace*{\fill}
+        \end{center}
+    \end{titlepage}
+
+    \thispagestyle{empty}
+    \tableofcontents
+    \newpage
+
+    \pagenumbering{arabic}
+    \section{Objectifs du laboratoire}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+
+    \section{Éléments théoriques}
+    \subsection{Les différentes quantités rencontrées}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+
+    \section{Comment va-t-on atteindre les buts?}
+
+    \section{Manipulation}
+    \subsection{Matériel}
+    \subsection{Configuration}
+
+    \section{Mesures}
+    \subsection{Manière de mesurer}
+
+    \section{Analyse des mesures et résultats}
+
+    \section{Synthèse et conclusion}
+\end{document}
+
