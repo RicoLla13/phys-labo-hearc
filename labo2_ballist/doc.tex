@@ -1,0 +1,124 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplotstable}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{empheq}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+    }
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+
+\renewcommand{\contentsname}{Table des Matières}
+%\renewcommand{\baselinestretch}{1.5}
+
+\title{Étude des équations balistiques}
+\author{Liviu Arsenescu, Cătălin Bozan}
+\date{date}
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter,
+    math upper,
+    tcbox raise base,
+    enhanced,
+    colframe=black,
+    colback=white,
+    boxrule=1pt,
+    drop shadow={
+        shadow xshift=3pt,
+        shadow yshift=-3pt,
+        opacity=1
+    },
+    #1
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=4cm]{hearclogo.png}}
+\lhead{\thepage}
+\setlength{\headsep}{30pt}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{\fill}
+            \Huge \textbf{Étude des équations de la balistique :} \\
+            \Huge \textbf{Équations du mouvement dans un champ gravitationnel} \\
+            \Large Rapport du Laboratoire \\
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=7cm]{hearclogo.png}
+            \end{figure}
+            \vspace{\fill}
+            \Large Liviu Arsenescu, Cătălin Bozan \\
+            19.03.2024
+
+            \vspace*{\fill}
+        \end{center}
+    \end{titlepage}
+
+    \thispagestyle{empty}
+    \tableofcontents
+    \newpage
+
+    \pagenumbering{arabic}
+    \section{Description de l'expérience}
+    \subsection{Buts}
+    \begin{itemize}
+        \item Vérifier les équations de la balistique
+        \item Obtenit la vitesse à laquelle le canon tire le boulet
+        \item Pédire la hauteur de l'impact de la bille contre un mur avec un tir oblique
+    \end{itemize}
+
+    \subsection{Éléments théoriques}
+    \subsubsection{Les différentes grandeurs physiques rencontrées}
+    \begin{minipage}{0.6\linewidth}
+        \begin{itemize}
+            \item \textbf{h} - hauteur initiale 
+            \item \textbf{d} - distance entre le canon et le point d'impact 
+            \item \textbf{H} - hauteur d'impact
+            \item $\bm{\theta}$ - angle de tir 
+            \item $\bm{v_0}$ - vitesse de sortie du canon
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}
+        \begin{itemize}
+            \item[-] $\bm{[h]=cm}$
+            \item[-] $\bm{[d]=cm}$
+            \item[-] $\bm{[H]=cm}$
+            \item[-] $\bm{[\theta]=deg}$
+            \item[-] $\bm{[v_0]=cms^{-1}}$
+        \end{itemize}   
+    \end{minipage}
+    \subsection{Principe de l'expérience}
+    \subsection{Schéma et montage de l’expérience}
+    \subsection{Déroulement de l'expérience}
+
+    \section{Mesures}
+
+    \section{Analyse des mesures et résultats}
+
+    \section{Synthèse et conclusion}
+\end{document}
+
