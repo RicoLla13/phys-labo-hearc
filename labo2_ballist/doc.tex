@@ -139,18 +139,18 @@
         \item Pour l'axe x :
         \begin{align*}
             x_0 &= 0 \\
-            v_x(t)&=v_0cos(\theta_0)
+            v_x(t)&=v_0cos(\theta)
         \end{align*}
         \item Pour l'axe y :
         \begin{align*}
             a_y &= -g \\
-            v_{y0} &= v_0sin(\theta_0) \\
+            v_{y0} &= v_0sin(\theta) \\
             y_0 &= h
         \end{align*}
         Où :
         \begin{itemize}
             \item $v_0$ - vitesse de sortie du canon
-            \item $\theta_0$ - angle entre $\vec{v_0}$ et l'axe x
+            \item $\theta$ - angle entre $\vec{v_0}$ et l'axe x
             \item $g$ - accélération gravitationnelle de Terre
             \item $h$ - hauteur de départ
         \end{itemize}
@@ -160,8 +160,8 @@
         \vspace{-\baselineskip}
         \begin{minipage}{0.3\linewidth}
             \begin{empheq}[box={\mymath}]{align*}
-                x(t) &= v_0cos(\theta_0)t \\
-                v_x(t) &= v_0cos(\theta_0)
+                x(t) &= v_0cos(\theta)t \\
+                v_x(t) &= v_0cos(\theta)
             \end{align*}
         \end{minipage}%
         \begin{minipage}{0.1\linewidth}
@@ -171,14 +171,18 @@
         \end{minipage}%
         \begin{minipage}{0.4\linewidth}
             \begin{empheq}[box={\mymath}]{align*}
-                y(t) &= \frac{-1}{2}gt^2 + v_0sin(\theta_0)t + h \\
-                v_y(t) &= -gv_0sin(\theta_0) + v_0sin(\theta_0)
+                y(t) &= \frac{-1}{2}gt^2 + v_0sin(\theta)t + h \\
+                v_y(t) &= -gv_0sin(\theta) + v_0sin(\theta)
             \end{align*}
         \end{minipage}
     \end{center}
     \subsubsection{Tir horizontal :}
-    Pour le tir horizontal, le vecteur vitesse fait avec l'axe x un angle $\theta$ de 0 degrées :
+    \begin{center}
+        \includegraphics[scale=0.8]{exp1_graph.pdf} \\
+    \end{center}
+    Pour le tir horizontal, le vecteur vitesse fait avec l'axe x un angle $\theta$ de $0^\circ$ :
     \begin{align*}
+        cos(\theta)=1&, sin(\theta)=0 \\
         \vec{v_0}=
         \begin{pmatrix}
             v_{x0} \\
@@ -189,8 +193,7 @@
             v_{x0} \\
             0
         \end{pmatrix}
-        &\Rightarrow \|\vec{v_0}\|=v_{x0}=v_0, \\
-        cos(\theta)=1&, sin(\theta)=0
+        &\Rightarrow \|\vec{v_0}\|=v_{x0}=v_0,
     \end{align*}
     Pour la position initiale($\vec{r_0}$), on a les valeurs suivantes :
     \begin{equation*}
@@ -220,15 +223,81 @@
     \end{itemize}
     L'instant où l'objet touche le sol nous donne la distance horizontale entre le point de départ et le point d'arrivée (d) :
     \begin{align*}
-        y(t_f)=0 &\Rightarrow t_f=\sqrt{\frac{2h}{g}} \\
-        d = x(t_f) = &v_0\cdot t_f = v_0 \cdot \sqrt{\frac{2h}{g}}
+        y(t_f)=0 \Rightarrow& t_f=\sqrt{\frac{2h}{g}} \\
+        x(t_f) = v_0\cdot t_f &= v_0 \cdot \sqrt{\frac{2h}{g}} \\
+        \Downarrow
+    \end{align*}
+    \begin{empheq}[box={\mymath}]{equation*}
+        d=v_o \cdot \sqrt{\frac{2h}{g}}
+    \end{equation*}
+    \subsection{Tir oblique :}
+    \begin{center}
+        \includegraphics[scale=0.8]{exp2_graph.pdf} \\
+    \end{center}
+    Pour le tir oblique, le vecteur vitesse fait avec l'axe x un angle $\theta$ de $30^\circ$ :
+    \begin{align*}
+        cos(\theta)&=\frac{\sqrt{3}}{2},sin(\theta)=\frac{1}{2} \\
+        \vec{v_0}=
+        \begin{pmatrix}
+            v_{x0} \\
+            v_{y0}
+        \end{pmatrix}
+        &= 
+        \begin{pmatrix}
+            v_0cos(\theta) \\
+            v_0sin(\theta)
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \frac{\sqrt{3}}{2}v_0 \\
+            \frac{1}{2}v_0
+        \end{pmatrix}
+    \end{align*}
+    Pour la position initiale($\vec{r_0}$), on a toujours valeurs :
+    \begin{equation*}
+        \vec{r_0}=
+        \begin{pmatrix}
+            x_0 \\
+            y_0
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            0 \\
+            h
+        \end{pmatrix}
+    \end{equation*}
+    Nos équations deviennent :
+    \begin{itemize}
+        \item Pour l'axe x :
+        \begin{empheq}[box={\mymath}]{align*}
+            x(t)&=\frac{\sqrt{3}}{2}v_0t \\
+            v_x(t)&=\frac{\sqrt{3}}{2}v_0
+        \end{align*}
+        \item Pour l'axe y
+        \begin{empheq}[box={\mymath}]{align*}
+            y&=-\frac{1}{2}gt^2+\frac{1}{2}v_0t+h \\
+            v_y(t)&=-gt + \frac{1}{2}v_0
+        \end{align*}
+    \end{itemize}
+    Comme on connaît la distance à laquelle le projectile frappe le mur (d), on peut aussi calculer la hauteur au même endroit (H).
+    \begin{align*}
+        x(t_f)=d \Rightarrow& t_f=\frac{2\sqrt{3}}{3v_0}d \\
+        y(t_f)=-\frac{1}{2}gt_f^2 &+ \frac{1}{2}v_0t_f+h \\
+        y(t_f)=\frac{-2}{3}\frac{d^2}{v_0^2}g &+ \frac{\sqrt{3}}{3}d+h \\
+        \Downarrow
+    \end{align*}
+    \begin{empheq}[box={\mymath}]{align*}
+        H=\frac{-2}{3}\frac{d^2}{v_0^2}g &+ \frac{\sqrt{3}}{3}d+h
     \end{align*}
     \subsection{Principe de l'expérience}
-    
-    
+    L'expérience va donc se dérouler en deux parties :
+    \begin{enumerate}
+        \item On a mesurer la distance à laquelle le projectile touche le sol, en utilisant differentes hauteurs de tir. On peut donc utiliser les valeurs mesurées (d et h) pour calculer la vitesse de tir du canon ($v_0$).
+        \item On mesure pour 5 tirs obliques la hauteur où le projectile touche le mur pour obtenir une hauteur expérimentale $H_{exp}$. Après, on utilise la vitesse calculée lors de la première expérience pour calculer une hauteur attendue $H_{calc}$. En fin on compare les deux.
+    \end{enumerate}
     \subsection{Schéma et montage de l’expérience}
-    Pour réaliser l'expérience, nous avons besoin d'un dispositif qui lance une bille, d'un moyen de marquer avec précision l'endroit où la bille a atterri et d'un moyen pour changer la hauteur et l'angle du canon.
-    Dans notre cas, nous avons utilisé :
+    Pour réaliser l'expérience, on a besoin d'un dispositif qui lance une bille, d'un moyen de marquer avec précision l'endroit où la bille a atterri et d'un moyen pour changer la hauteur et l'angle du canon.
+    Dans notre cas, on a utilisé :
     \begin{itemize}
         \item Un canon à ressort à angle variable
         \item Une bille en plastique
