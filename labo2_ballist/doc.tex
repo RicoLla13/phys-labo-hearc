@@ -113,27 +113,72 @@
         \end{itemize}   
     \end{minipage}
     \subsubsection{Les équations de la balistique}
-    La théorie nous donne les équations suivantes pour le mouvement d'un corps en configuration balistique:
-    \begin{itemize}
-        \item Pour l'axe x:
-        \begin{align*}
-            x(t)&=v_{x0}t+x_0 \\
-            v_x(t)&=v_{x0}
-        \end{align*}
-        \item Pour l'axe y
-        \begin{align*}
-            y&=-\frac{1}{2}gt^2+v_{y0}t+y_0 \\
-            v_y(t)&=-gt+v_{y0}
-        \end{align*}
-    \end{itemize}
-    On peut utiliser ces équations pour construire deux systèmes contenant un mouvement balistique :
+    Dans le cas du mouvement qui nous intéresse, on peut observer deux types de mouvements :
     \begin{enumerate}
-        \item Tir horizontal
-        \item Tir oblique
+        \item Mouvement à vitesse constante, avec l'équation :
+        \begin{align*}
+            x(t) = v_xt + x_0
+        \end{align*}
+        \item Mouvement à accélération constante, avec les équations :
+        \begin{align*}
+            v_x(t) &= a_xt + v_{x0} \\
+            x(t) &= \frac{1}{2}a_xt^2 + v_x(t) + x_0
+        \end{align*}
     \end{enumerate}
-    \subsubsection{horizontal :}
-    Pour le tir horizontal, le vecteur vitesse fait avec l'axe x un angle $\theta$ de 0 degrées:
+    Où $x(t)$ est le déplacement sur n'importe quel axe de nom x, en fonction du temps, $v_x(t)$ est la vitesse sur l'axe x et $a_x$ est l'accélération. \\
+    Pour étudier le tir au canon, on a les contraintes mathématiques suivantes :
     \begin{equation*}
+        \vec{v_0}=
+        \begin{pmatrix}
+            v_{x0} \\
+            v_{y0}
+        \end{pmatrix}, 
+        \|\vec{v_0}\|=v_0
+    \end{equation*}
+    \begin{itemize}
+        \item Pour l'axe x :
+        \begin{align*}
+            x_0 &= 0 \\
+            v_x(t)&=v_0cos(\theta_0)
+        \end{align*}
+        \item Pour l'axe y :
+        \begin{align*}
+            a_y &= -g \\
+            v_{y0} &= v_0sin(\theta_0) \\
+            y_0 &= h
+        \end{align*}
+        Où :
+        \begin{itemize}
+            \item $v_0$ - vitesse de sortie du canon
+            \item $\theta_0$ - angle entre $\vec{v_0}$ et l'axe x
+            \item $g$ - accélération gravitationnelle de Terre
+            \item $h$ - hauteur de départ
+        \end{itemize}
+    \end{itemize}
+    Avec ces contraintes, on peut construire le système d'équations suivant pour le mouvement que on étudie :
+    \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}{0.3\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                x(t) &= v_0cos(\theta_0)t \\
+                v_x(t) &= v_0cos(\theta_0)
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{0.1\linewidth}
+            \begin{center}
+                et
+            \end{center}
+        \end{minipage}%
+        \begin{minipage}{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                y(t) &= \frac{-1}{2}gt^2 + v_0sin(\theta_0)t + h \\
+                v_y(t) &= -gv_0sin(\theta_0) + v_0sin(\theta_0)
+            \end{align*}
+        \end{minipage}
+    \end{center}
+    \subsubsection{Tir horizontal :}
+    Pour le tir horizontal, le vecteur vitesse fait avec l'axe x un angle $\theta$ de 0 degrées :
+    \begin{align*}
         \vec{v_0}=
         \begin{pmatrix}
             v_{x0} \\
@@ -144,8 +189,10 @@
             v_{x0} \\
             0
         \end{pmatrix}
-    \end{equation*}
-    Pour la position initiale, on a les valeurs suivantes:
+        &\Rightarrow \|\vec{v_0}\|=v_{x0}=v_0, \\
+        cos(\theta)=1&, sin(\theta)=0
+    \end{align*}
+    Pour la position initiale($\vec{r_0}$), on a les valeurs suivantes :
     \begin{equation*}
         \vec{r_0}=
         \begin{pmatrix}
@@ -158,22 +205,23 @@
             h
         \end{pmatrix}
     \end{equation*}
-    Ces contraintes nous donnent les équations temporelles suivantes:
+    Nos équations deviennent :
     \begin{itemize}
         \item Pour l'axe x :
-        \begin{align*}
-            x(t)&=v_{x0}t+x_0 \\
-            v_x(t)&=v_{x0}
+        \begin{empheq}[box={\mymath}]{align*}
+            x(t)&=v_0t \\
+            v_x(t)&=v_0
         \end{align*}
         \item Pour l'axe y
-        \begin{align*}
-            y&=-\frac{1}{2}gt^2+y_0 \\
+        \begin{empheq}[box={\mymath}]{align*}
+            y&=-\frac{1}{2}gt^2+h \\
             v_y(t)&=-gt
         \end{align*}
     \end{itemize}
-    L'instant où l'objet touche le sol nous donne la distance entre le point de départ et le point d'arrivée (d), et la hauteur à laquelle l'objet a été lancé (h).
+    L'instant où l'objet touche le sol nous donne la distance horizontale entre le point de départ et le point d'arrivée (d) :
     \begin{align*}
-        d&=
+        y(t_f)=0 &\Rightarrow t_f=\sqrt{\frac{2h}{g}} \\
+        d = x(t_f) = &v_0\cdot t_f = v_0 \cdot \sqrt{\frac{2h}{g}}
     \end{align*}
     \subsection{Principe de l'expérience}
     
