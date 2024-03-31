@@ -271,21 +271,21 @@
     \begin{itemize}
         \item Pour l'axe x :
         \begin{empheq}[box={\mymath}]{align*}
-            x(t)&=\frac{\sqrt{3}}{2}v_0t \\
-            v_x(t)&=\frac{\sqrt{3}}{2}v_0
+            x(t)&=v_0cos(\theta)t \\
+            v_x(t)&=v_0cos(\theta)
         \end{align*}
         \item Pour l'axe y
         \begin{empheq}[box={\mymath}]{align*}
-            y&=-\frac{1}{2}gt^2+\frac{1}{2}v_0t+h \\
-            v_y(t)&=-gt + \frac{1}{2}v_0
+            y(t)&=-\frac{1}{2}gt^2+v_0sin(\theta)t+h \\
+            v_y(t)&=-gt + v_0sin(\theta)
         \end{align*}
     \end{itemize}
     Comme on connaît la distance à laquelle le projectile frappe le mur (d), on peut aussi calculer la hauteur au même endroit (H).
     \begin{align*}
-        x(t_f)=d \Rightarrow& t_f=\frac{2\sqrt{3}}{3v_0}d \\
-        y(t_f)=-\frac{1}{2}gt_f^2 &+ \frac{1}{2}v_0t_f+h \\
-        y(t_f)=\frac{-2}{3}\frac{d^2}{v_0^2}g &+ \frac{\sqrt{3}}{3}d+h \\
-        \Downarrow
+        x(t_f)&=d \Rightarrow t_f= \frac{d}{v_0cos(\theta)} \\
+        y(t_f)&=-\frac{1}{2}gt_f^2 + v_0sin(\theta)t_f+h \\
+        y(t_f)&=\frac{-g}{2} \frac{d^2}{cos^2(\theta)v_0^2} + tan(\theta)d+h \\
+        &\Downarrow
     \end{align*}
     \begin{empheq}[box={\mymath}]{align*}
         H=\frac{-2}{3}\frac{d^2}{v_0^2}g &+ \frac{\sqrt{3}}{3}d+h
@@ -469,7 +469,7 @@
     \end{tikzpicture} \\
     En comparant ce graphique avec le fait que $v_0$ est la pente du graphique, on peut conclure que :
     \begin{empheq}[box={\mymath}]{equation*}
-        v_0=2.15ms^{-1}
+        v_0=(2.15 \pm 0.05)ms^{-1}
     \end{equation*}
     \subsection{Tir oblique :}
     Dans le cas d'un tir oblique, on a déjà calculé dans le tableau ci-dessus la valeur de $H_{exp}$ :
@@ -491,6 +491,10 @@
             \end{equation*}
         \end{minipage}
     \end{center}
+    En utilisant la formule $H_{exp}=\frac{-2}{3}\frac{d^2}{v_0^2}g + \frac{\sqrt{3}}{3}d+h_0$, avec $d=0.700m$ et $h_0=0.268m$, on peut obtenir la vitesse suivante :
+    \begin{empheq}[box={\mymath}]{equation*}
+        v_{0,exp}=(3.3 \pm 0.2)ms^{-1}
+    \end{equation*}
     Pour calculer $H_{calc}$, on utilise la vitesse que on a calculée dans l'expérience précédente et la formule de la partie théorique :
     \begin{center}
         \vspace{-\baselineskip}
@@ -504,16 +508,22 @@
                 et
             \end{center}
         \end{minipage}%
-        \begin{minipage}{0.3\linewidth}
+        \begin{minipage}{0.4\linewidth}
             \begin{empheq}[box={\mymath}]{equation*}
                 H_{calc}=\frac{-2}{3}\frac{d^2}{v_0^2}g + \frac{\sqrt{3}}{3}d+h_0
             \end{equation*}
         \end{minipage}
+        \hfill
     \end{center}
     On obtient:
-    \begin{empheq}[box={\mymath}]{equation*}
-        H_{calc} = 0.350m
-    \end{equation*}
+    \begin{figure}[ht!]
+        \begin{minipage}{\textwidth}
+            \begin{empheq}[box={\mymath}]{equation*}
+                H_{calc} = -0.021m
+            \end{equation*}
+            \caption*{!! Valeur absurde, expliquée dans les sections suivantes !!}
+        \end{minipage}
+    \end{figure}
     \subsection{Choix et calcul d'incertitudes}
     \subsubsection{Choix des incertitude :}
     \begin{itemize}
@@ -521,7 +531,8 @@
     \end{itemize}
     \subsubsection{Calcul d'incertitudes}
     \begin{itemize}
-        \item Première expérience : pour la distance finale, nous avons effectué cinq tirs avec les mêmes spécifications, et nous avons utilisé les formules statistiques "moyenne" et "écart-type".
+        \item \textbf{Première expérience :} \\
+        Pour la distance finale, on a effectué cinq tirs avec les mêmes spécifications, et nous avons utilisé les formules statistiques "moyenne" et "écart-type" :
     \begin{center}
         \vspace{-\baselineskip}
         \begin{minipage}{0.3\linewidth}
@@ -534,13 +545,58 @@
                 et
             \end{center}
         \end{minipage}%
-        \begin{minipage}{0.3\linewidth}
+        \begin{minipage}{0.4\linewidth}
             \begin{empheq}[box={\mymath}]{equation*}
-                \sigma_d^2 = \frac{1}{5}\sum_{i=1}{5}(d_i- \bar d)^2
+                \sigma_d^2 = \frac{1}{5}\sum_{i=1}^{5}(d_i- \bar d)^2
             \end{equation*}
         \end{minipage}
+        \hfill
     \end{center}
+        Pour le coefficient $\sqrt\frac{2h}{g}$, on a utilisé l'approche mathématique suivante :
+        \begin{align*}
+            \frac{\sqrt{\frac{2h}{g}}}{\Delta \sqrt{\frac{2h}{g}}} =& \frac{h}{\Delta h} \\
+            \Downarrow&
+        \end{align*}
+        \begin{empheq}[box={\mymath}]{equation*}
+            \Delta \sqrt{\frac{2h}{g}} = \Delta h \sqrt{\frac{2h}{g}} \cdot \frac{1}{h}
+        \end{equation*}
+        Pour la vitesse $v_0$, on a utilisé l'incertitude donnée par la régression linéaire :
+        \begin{empheq}[box={\mymath}]{equation*}
+            \Delta v_0 = \pm 0.05ms^{-1}
+        \end{equation*}
+        \item \textbf{Deuxième expérience :} \\
+        Pour calculer $H_{exp}$, on a effectué cinq tirs avec les mêmes spécifications, et on a toujours utilisé les formules statistiques "moyenne" et "écart-type" :
+        \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}{0.3\linewidth}
+            \begin{empheq}[box={\mymath}]{equation*}
+                \bar H = \frac{1}{5} \sum_{i=1}^{5} H_i
+            \end{equation*}
+        \end{minipage}%
+        \begin{minipage}{0.1\linewidth}
+            \begin{center}
+                et
+            \end{center}
+        \end{minipage}%
+        \begin{minipage}{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{equation*}
+                \Delta H^2 = \frac{1}{5}\sum_{i=1}^{5}(H_i- \bar H)^2
+            \end{equation*}
+        \end{minipage}
+        \hfill
+        \end{center}
+        Pour calculer l'incertitude de la vitesse $v_{0,exp}$, on a suivi :
+        \begin{align*}
+            H_{exp}&=\frac{-2}{3}\frac{d^2}{v_{0,exp}^2}g + \frac{\sqrt{3}}{3}d+h_0
+            \Rightarrow
+            v_{0,exp}^2 = \frac{-2H_{exp}}{3d^2} + \frac{2\sqrt{3}}{9d} + \frac{2h_0}{3d^2} \\
+            \Delta v_{0,exp}^2 &= \frac{2}{9d^2}((2H_{exp} + 3h_0)(1 + 2\Delta d \cdot d) + \sqrt{3} \Delta d) \\
+            \Delta v_{0,exp} &= \frac{\Delta v_{0,exp}^2}{2v_{0,exp}}
+            \Rightarrow
+            \Delta v_{0,exp} = \frac{1}{9dv_{0,exp}}((2H_{exp} + 3h_0)(1 + 2\Delta d \cdot d) + \sqrt{3} \Delta d)
+        \end{align*}
     \end{itemize}
+    \subsection{Discussion des résultats :}
     \section{Synthèse et conclusion}
 \end{document}
 
