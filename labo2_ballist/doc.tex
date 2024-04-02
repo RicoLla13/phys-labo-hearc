@@ -101,6 +101,7 @@
             \item \textbf{H} - hauteur d'impact
             \item $\bm{\theta}$ - angle de tir 
             \item $\bm{v_0}$ - vitesse de sortie du canon
+            \item $\bm{g}$ - accélération gravitationnelle de Terre
         \end{itemize}
     \end{minipage}%
     \hfill
@@ -111,6 +112,7 @@
             \item[-] $\bm{[H]=m}$
             \item[-] $\bm{[\theta]=deg}$
             \item[-] $\bm{[v_0]=ms^{-1}}$
+            \item[-] $\bm{g}=9.81ms^{-1}$
         \end{itemize}   
     \end{minipage}
     \subsubsection{Les équations de la balistique}
@@ -597,6 +599,90 @@
         \end{align*}
     \end{itemize}
     \subsection{Discussion des résultats :}
+    On commence la discussion avec la deuxiéme expérience parce qu'elle a permis de trouver une erreur dans les calculs de la première expérience. \\ 
+    Comme on peut le voir, les valeurs de $H_{exp}$ et $v_{0,exp}$ sont des valeurs auxquelles on aurait pu s'attendre, mais la valeur pour $H_{calc}$, calculée avec $v_0$ de la première expérience, est une valeur absurde. \\ 
+    On peut voir dans le tableau de données de la première expérience que l'incertitude $\Delta \sqrt{\frac{2h}{g}}=0.004$, qui correspond à la hauteur $h=0.149m$, est le double de la tendance générale. Compte tenu de cela, on peut conclure que cette entrée est une valeur aberrante et l'exclure de notre tableau de valeurs :
+    \begin{table}[ht!]
+        \centering
+        \begin{tabular}{c|c|c|c|c|c}
+            \toprule
+             $h$(m) & $\Delta h$(m) & $\bar{d}$(m) & $\sigma_d$(m) & $\sqrt{\frac{2h}{g}}$(s) & $\Delta \sqrt{\frac{2h}{g}}$(s) \\
+            \midrule
+            0.361 & 0.003 & 0.873 & 0.041 & 0.271 & 0.002 \\
+            0.475 & 0.003 & 0.981 & 0.026 & 0.311 & 0.002 \\
+            0.587 & 0.003 & 1.136 & 0.018 & 0.346 & 0.002 \\
+            0.701 & 0.003 & 1.174 & 0.034 & 0.378 & 0.002 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Mesures pour la première expérience (après exclusion)}
+    \end{table}
+    \newpage
+    On peut maintenant refaire la régression linéaire : \\
+    \pgfplotstableread[col sep=comma]{plotData/plotRevI.csv}\expIdata
+    \begin{tikzpicture}[scale=1]
+        % Scatter plot
+        \begin{axis}[
+            xlabel={$\sqrt{\frac{2h}{g}}$($s$)},
+            ylabel={$\bar d$(m)},
+            legend pos=north east,
+            legend style={at={(0.30,0.75)}, anchor=south},
+            grid=both,
+            width=1\textwidth,
+            height=0.3\textheight,
+            x tick label style={
+                /pgf/number format/.cd,
+                precision=3,
+                fixed,
+                fixed zerofill,
+            },
+            y tick label style={
+                /pgf/number format/.cd,
+                precision=3,
+                fixed,
+                fixed zerofill,
+            },
+            xmin=0.26,
+            xmax=0.39,
+            ymin=0.7,
+            ymax=1.25,
+        ]
+            \addplot+[only marks, mark=x, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] table[x=g, x error=err_g, y=d, y error=err_d] {\expIdata};
+
+            % Linear regression line
+            \addplot [red, thick] table[
+                y={create col/linear regression={y=d}}
+            ] {\expIdata};
+            \xdef\slope{\pgfplotstableregressiona}
+            \xdef\intercept{\pgfplotstableregressionb}
+
+            % Add the equation of the line
+            \addlegendentry{Données}
+            \addlegendentry{Régr. Lin.: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
+        \end{axis}
+    \end{tikzpicture} \\
+    On obtiend :
+    \begin{empheq}[box={\mymath}]{equation*}
+        v_0 = (2.98 \pm 0.5) m s^{-1}
+    \end{equation*}
+    Cette valeur est encore loin de celle que on a obtenue expérimentalement ($v_{0,exp}=(3.3 \pm 0.2)ms^{-1}$), mais on peut constater une tendance à l'amélioration. \\ 
+    En continuant les calculs mathématiques, on obtient :
+     \begin{empheq}[box={\mymath}]{equation*}
+        H_{calc} = 0.312m
+    \end{equation*}
+    L'inexactitude des données peut avoir deux origines :
+    \begin{itemize}
+        \item Une erreur imprévue dans la manière de mesurer
+        \item Un facteur externe et imprévu qui a perturbé les mesures
+    \end{itemize}
+
+    \newpage
     \section{Synthèse et conclusion}
+    En cadre de laboratoire, on a effectué deux expériences :
+    \begin{itemize}
+        \item Dans le cadre de la première expérience, on a effectué des tirs sans inclinaison à partir de différentes hauteurs, afin d'approcher, à l'aide de formules théoriques, la vitesse à laquelle le canon lance le boulet. Après examen des données collectées, les valeurs obtenues sont finalement proches des valeurs théoriquement attendues.
+        \item Dans le cadre de la deuxiéme expérience, on a tiré à un angle de $30 ^ \circ$ pour obtenir une approximation de la hauteur à laquelle le projectile frappe le mur à une distance fixe de celui-ci. Ensuite, nous avons essayé de prédire la hauteur à laquelle le projectile toucherait le mur en utilisant la vitesse du canon calculée dans l'expérience précédente.
+    \end{itemize}
+    En effectuant les calculs mathématiques, on a remarqué que les données recueillies lors de la première expérience sont très imprécises et conduisent à des valeurs absurdes dans le calcul. Cette erreur a pu être partiellement résolue en excluant une valeur aberrante de l'ensemble des données collectées.
+    Avec les résultats obtenus, même s'ils sont encore loin d'être égaux, on peut constater que les formules théoriques donnent des valeurs concrètes, très proches de la vérité, et que l'objectif des expériences a été atteint.
 \end{document}
 
