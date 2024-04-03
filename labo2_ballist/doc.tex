@@ -521,7 +521,7 @@
     \begin{figure}[ht!]
         \begin{minipage}{\textwidth}
             \begin{empheq}[box={\mymath}]{equation*}
-                H_{calc} = -0.021m
+                H_{calc} = (-0.1 \pm 0.4)m
             \end{equation*}
             \caption*{!! Valeur absurde, expliquée dans les sections suivantes !!}
         \end{minipage}
@@ -597,6 +597,11 @@
             \Rightarrow
             \Delta v_{0,exp} = \frac{1}{9dv_{0,exp}}((2H_{exp} + 3h_0)(1 + 2\Delta d \cdot d) + \sqrt{3} \Delta d)
         \end{align*}
+        On peut utiliser la formule de $H_{calc}$ pour calculer l'incertitude, dans la même manière :
+        \begin{align*}
+            H_{calc}&=\frac{-2}{3}\frac{d^2}{v_0^2}g + \frac{\sqrt{3}}{3}d+h_0 \\
+            \Delta H_{calc} &= \frac{-4(\Delta d \cdot v_0 + \Delta v_0 \cdot d)} {3 d \cdot v_0} g + \frac{\sqrt{3}}{3} \Delta d + \Delta h_0
+        \end{align*}
     \end{itemize}
     \subsection{Discussion des résultats :}
     On commence la discussion avec la deuxiéme expérience parce qu'elle a permis de trouver une erreur dans les calculs de la première expérience. \\ 
@@ -662,12 +667,12 @@
     \end{tikzpicture} \\
     On obtiend :
     \begin{empheq}[box={\mymath}]{equation*}
-        v_0 = (2.98 \pm 0.5) m s^{-1}
+        v_0 = (2.98 \pm 0.05) m s^{-1}
     \end{equation*}
     Cette valeur est encore loin de celle que on a obtenue expérimentalement ($v_{0,exp}=(3.3 \pm 0.2)ms^{-1}$), mais on peut constater une tendance à l'amélioration. \\ 
     En continuant les calculs mathématiques, on obtient :
      \begin{empheq}[box={\mymath}]{equation*}
-        H_{calc} = 0.312m
+         H_{calc} = (0.32 \pm 0.08)m
     \end{equation*}
     L'inexactitude des données peut avoir deux origines :
     \begin{itemize}
