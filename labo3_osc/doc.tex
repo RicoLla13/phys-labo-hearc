@@ -129,7 +129,81 @@
         \item En ajustant la fréquence et la tension (amplitude) du générateur, on génère les douze premières harmoniques du notre système.
     \end{itemize}
     \section{Mesures}
+    \subsection{Pour le calcul de la vitesse avec la masse linéique}
+    \subsubsection{Mesures constantes :}
+    \subsubsection{Tableau des mesures :}
+
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{c|c}
+            \toprule
+            n & f$_n$ (Hz) \\
+            \midrule
+            1  & 6.37  \\
+            2  & 13.18 \\
+            3  & 19.68 \\
+            4  & 26.21 \\
+            5  & 32.51 \\
+            6  & 39.51 \\
+            7  & 45.71 \\
+            8  & 52.81 \\
+            9  & 59.21 \\
+            10 & 65.71 \\
+            11 & 72.51 \\
+            12 & 78.71 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Les douze premières harmoniques}
+    \end{table}
+
+    \subsection{Pour le calcul de la vitesse avec les harmoniques}
     \section{Analyse des mesures et résultats}
+    \subsection{Vitesse avec la masse linéique}
+    \subsection{Vitesse avec les harmoniques}
+    
+    \pgfplotstableread[col sep=comma]{data/exp_data.csv}\expIdata
+    \begin{tikzpicture}[scale=1]
+        % Scatter plot
+        \begin{axis}[
+            xlabel={n},
+            ylabel={f$_n$ (Hz)},
+            legend pos=north east,
+            legend style={at={(0.30,0.75)}, anchor=south},
+            grid=both,
+            width=1\textwidth,
+            height=0.3\textheight,
+            x tick label style={
+                /pgf/number format/.cd,
+                precision=0,
+                fixed,
+                fixed zerofill,
+            },
+            y tick label style={
+                /pgf/number format/.cd,
+                precision=2,
+                fixed,
+                fixed zerofill,
+            },
+            xmin=0,
+            xmax=13,
+            ymin=4,
+            ymax=81,
+        ]
+            \addplot+[only marks, mark=x, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] table[x=n, x error=err_g, y=fn, y error=err_fn] {\expIdata};
+
+            % Linear regression line
+            \addplot [red, thick] table[
+                y={create col/linear regression={y=fn}}
+            ] {\expIdata};
+            \xdef\slope{\pgfplotstableregressiona}
+            \xdef\intercept{\pgfplotstableregressionb}
+
+            % Add the equation of the line
+            \addlegendentry{Données}
+            \addlegendentry{Régr. Lin.: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
+        \end{axis}
+    \end{tikzpicture}
+
     \subsection{Choix et calcul d'incertitudes}
     \subsubsection{Choix des incertitude :}
     \subsubsection{Calcul d'incertitudes}
