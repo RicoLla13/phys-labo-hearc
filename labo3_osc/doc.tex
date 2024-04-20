@@ -107,8 +107,8 @@
     \subsection{Principe de l'expérience}
     L'expérience consiste en ces deux parties :
     \begin{enumerate}
-        \item Avant de procéder à l'expérience proprement dite, on calcule à l'aide du poids et de la corde la masse linéique, qu'on utilise pour calculer une vitesse $v_{calc}$.
-        \item On calcule les paires de (n, f$_n$) pour les douze premières harmoniques, qu'on utilise pour obtenir une vitesse $v_{exp}$.
+        \item Avant de procéder à l'expérience proprement dite, on calcule la masse linéique de la corde à l'aide de différentes mesures liées au poids et à la corde, qu'on utilise ensuite, avec la force $F$, pour calculer la vitesse $v_{calc}$.
+        \item On mesure les paires de ($n$, $f_n$) pour les douze premières harmoniques, puis on les utilise pour construire une régression linéaire, à partir de la pente de laquelle on extrait la vitesse $v_{exp}$.
     \end{enumerate}
 
     \subsection{Schéma et montage de l’expérience}
@@ -129,44 +129,73 @@
         \item En ajustant la fréquence et la tension (amplitude) du générateur, on génère les douze premières harmoniques du notre système.
     \end{itemize}
     \section{Mesures}
-    \subsection{Pour le calcul de la vitesse avec la masse linéique}
-    \subsubsection{Mesures constantes :}
-    \subsubsection{Tableau des mesures :}
+    \subsection{Mesures constantes :}
+    \begin{itemize}
+        \item $L=(1.79 \pm 0.05)$ m - longueur entre l'agitateur et la poulie
+        \item $m=(199.6 \pm 0.1)$ g - poids pour la fixation de la corde
+        \item $m_c=(10.3 \pm 0.1)$ g - masse de la corde
+        \item $l'=(0.39 \pm 0.03)$ m - longueur de la corde avant l'étirement
+        \item $l''=(0.43 \pm 0.03)$ m - longueur de la corde après l'étirement
+    \end{itemize}
+    \subsection{Tableau des mesures :}
 
-    \begin{table}[htbp]
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \begin{tabular}{c|c}
+        \begin{tabular}{c|c|c}
             \toprule
-            n & f$_n$ (Hz) \\
+            $n$ & $f_n$ (Hz)  & $\Delta f_n$ (Hz) \\
             \midrule
-            1  & 6.37  \\
-            2  & 13.18 \\
-            3  & 19.68 \\
-            4  & 26.21 \\
-            5  & 32.51 \\
-            6  & 39.51 \\
-            7  & 45.71 \\
-            8  & 52.81 \\
-            9  & 59.21 \\
-            10 & 65.71 \\
-            11 & 72.51 \\
-            12 & 78.71 \\
+            1  & 6.37  & 0.02 \\
+            2  & 13.18 & 0.02 \\
+            3  & 19.68 & 0.02 \\
+            4  & 26.21 & 0.02 \\
+            5  & 32.51 & 0.02 \\
+            6  & 39.51 & 0.02 \\
+            7  & 45.71 & 0.02 \\
+            8  & 52.81 & 0.02 \\
+            9  & 59.21 & 0.02 \\
+            10 & 65.71 & 0.02 \\
+            11 & 72.51 & 0.02 \\
+            12 & 78.71 & 0.02 \\
             \bottomrule
         \end{tabular}
-        \caption{Les douze premières harmoniques}
-    \end{table}
+        \captionof{table}{Les douze premières harmoniques}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.6\textwidth}
+        Légende :
+        \begin{itemize}
+            \item $n$ - nombre de l'harmonique
+            \item $f_n$ - fréquence de l'harmonique $n$ (en Hz)
+            \item $\Delta f_n$ - incertitude de la fréquence (en Hz)
+        \end{itemize}
+    \end{minipage}
 
-    \subsection{Pour le calcul de la vitesse avec les harmoniques}
+    \newpage
     \section{Analyse des mesures et résultats}
     \subsection{Vitesse avec la masse linéique}
+    Pour calculer la vitesse à l'aide de la force $F$ et la masse linéique $\mu$, on utilise la formule de la partie théorique :
+    \begin{empheq}[box={\mymath}]{equation*}
+        v_{calc} = \sqrt{\frac{F}{\mu}}
+    \end{equation*}
+    On obtient, donc :
+    \begin{empheq}[box={\mymath}]{equation*}
+        v_{calc} = (20 \pm 6) \textrm{ ms}^{-1}
+    \end{equation*}
     \subsection{Vitesse avec les harmoniques}
+    Pour construire la régression linéaire, on partira de la formule suivante déduite dans la partie théorique :
+    \begin{empheq}[box={\mymath}]{equation*}
+        f_n = \frac{v_{exp}}{2L} n
+    \end{equation*}
+    On constate que la valeur $f_n$ est une fonction de $n$, et on voit aussi que $\frac{v_{exp}}{2L}$ est la pente de la fonction, qu'on note par $a$ pour les calculs qui suivre. \\ 
+    On obtient, donc :
     
     \pgfplotstableread[col sep=comma]{data/exp_data.csv}\expIdata
     \begin{tikzpicture}[scale=1]
         % Scatter plot
         \begin{axis}[
-            xlabel={n},
-            ylabel={f$_n$ (Hz)},
+            xlabel={$n$},
+            ylabel={$f_n$ (Hz)},
             legend pos=north east,
             legend style={at={(0.30,0.75)}, anchor=south},
             grid=both,
@@ -203,7 +232,11 @@
             \addlegendentry{Régr. Lin.: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
         \end{axis}
     \end{tikzpicture}
-
+    Après avoir extrait la vitesse et l'incertitude de la valeur 
+de la pente, on a :
+    \begin{empheq}[box={\mymath}]{equation*}
+        v_{exp} = (23.6 \pm 0.8) \textrm{ ms}^{-1}
+    \end{equation*}
     \subsection{Choix et calcul d'incertitudes}
     \subsubsection{Choix des incertitude :}
     \subsubsection{Calcul d'incertitudes}
