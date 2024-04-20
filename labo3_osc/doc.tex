@@ -237,9 +237,63 @@ de la pente, on a :
     \begin{empheq}[box={\mymath}]{equation*}
         v_{exp} = (23.6 \pm 0.8) \textrm{ ms}^{-1}
     \end{equation*}
+
+    \newpage
     \subsection{Choix et calcul d'incertitudes}
     \subsubsection{Choix des incertitude :}
+    \begin{itemize}
+        \item Pour la longueur de la corde : lorsque la longueur est proche de 2 mètres, notre précision diminue, on a donc choisi une incertitude plus grande de $\Delta L = 0.05$ m.
+        \item Pour les deux longueurs $l'$ et $l''$ : compte tenu du fait que les mesures ont été effectuées sur de petites distances, on a choisi une incertitude $\Delta l = 0.03$ m.
+        \item Pour les masses : on utilise l'incertitude indiquée par la balance $\Delta m = 0.01$ g.
+        \item Pour l'incertitude de la fréquence : dans ce cas, l'incertitude peut provenir de plusieurs facteurs :
+        \begin{itemize}
+            \item On ne sait pas si l'agitateur répond exactement à la fréquence indiquée par le générateur.
+            \item On ne sait pas si cette fréquence est exactement la fréquence correspondant à l'harmonique $n$.
+        \end{itemize}
+        Ainsi, par expérience, on a observé qu'il n'y a pas de changement visible dans la forme de l'harmonique si on change la fréquence de $\pm 0.02$ Hz.
+    \end{itemize}
     \subsubsection{Calcul d'incertitudes}
+    On sait que $v_{calc}$ est représenté par la formule :
+    \begin{empheq}[box={\mymath}]{equation*}
+        v_{calc} = \sqrt{\frac{F}{\mu}}
+    \end{equation*}
+    On peut donc calculer l'incertitude à l'aide du calcul suivant :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \frac{\Delta v_{calc}}{|v_{calc}|} = \frac{1}{2} \cdot \frac{\Delta F / \mu}{F / \mu}
+    \end{equation*}
+    On sait que :
+    \begin{align*}
+        \begin{cases}
+            F &= mg \\
+            \mu &= \frac{m_c}{L} \cdot \frac{l'}{l''}
+        \end{cases}
+        & \Rightarrow
+        \begin{cases}
+            \Delta F &= 1 \, \text{mN} \\
+            \Delta \mu &= 2 \, \text{gm}^{-1}
+        \end{cases}
+    \end{align*}
+    Donc:
+    \begin{empheq}[box={\mymath}]{equation*}
+        \Delta v_{calc} = 6 \textrm{ ms}^{-1}
+    \end{equation*}
+    Pour calculer l'incertitude de $v_{exp}$, on va utiliser quelques notions de statistiques simples :
+    \begin{itemize}
+        \item On connait l'erreur standard de la pente : $err_{st} \approx 0.016$
+        \item On admet que on a une confiance de $95\%$ dans nos résultats, donc on a une valeur critique de $val_{crt} \approx 1.96$
+    \end{itemize}
+    On en déduit la formule suivante :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \Delta a = err_{st} \cdot val_{crt} = 0.04
+    \end{equation*}
+    En utilisant la pente, on a donc le calcul suivant :
+    \begin{align*}
+        \frac{\Delta v_{\text{exp}}}{v_{\text{exp}}} = \frac{\Delta a}{a}& + \frac{\Delta (2L)}{2L} \\
+        \Downarrow&
+    \end{align*} %
+    \begin{empheq}[box={\mymath}]{equation*}
+        \Delta v_{\text{exp}} = 0.8 \, \text{ms}^{-1}
+    \end{empheq}
     \subsection{Discussion des résultats :}
     \section{Synthèse et conclusion}
 \end{document}
