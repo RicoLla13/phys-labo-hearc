@@ -98,8 +98,10 @@
             \item Différentes longueurs ($\bm{L, l', l''}$)
             \item Différentes masses ($\bm{m, m_c}$)
             \item Force de la pesanteur ($\bm{F}$)
+            \item Tension dans la corde ($\bm{F_T}$)
             \item Masse linéique de la corde ($\bm{\mu}$)
             \item Fréquence de l'harmonique $n$ ($\bm{f_n}$)
+            \item Période d'oscillation $n$ ($\bm{T}$)
         \end{itemize}
     \end{minipage}%
     \hfill
@@ -107,11 +109,207 @@
         \begin{itemize}
             \item[-] $\bm{[l]} =$ m
             \item[-] $\bm{[m]} =$ g
-            \item[-] $\bm{[F]} =$ mN
+            \item[-] $\bm{[F]} =$ N
+            \item[-] $\bm{[F_T]} =$ N
             \item[-] $\bm{[\mu]} =$ gm$^{-1}$
             \item[-] $\bm{[f_n]} =$ Hz
+            \item[-] $\bm{[T]} =$ s
         \end{itemize}   
     \end{minipage}
+
+    \subsubsection{Vitesse de propagation de l'onde dans la corde}
+    On prends un morceau de corde et considère que $F_T$ est la tension de la corde qui est équivalente à la force gravitationnelle du poids $F$ et la masse linéique de la corde $\mu$.
+    
+    \includegraphics[width=.7\paperwidth]{images/schema_static_force.pdf}
+
+    Si nous considérons un morceau de corde en mouvement, nous pouvons prendre deux points ($A$ et $B$) sur la corde et analyser les forces qui agissent sur eux ($F_a$ et $F_b$).
+
+    Les deux forces $F_a$ et $F_b$ sont équivalentes à la tension dans la corde $F_T$.
+
+    \begin{empheq}[box={\mymath}]{align*}
+        \lvert F_a \rvert &= \lvert F_b \rvert = \lvert F_T \rvert
+    \end{align*}
+
+    \includegraphics[width=.7\paperwidth]{images/graph_forces.pdf}
+
+    Dans le morceau de corde apparaît un MCU avec une norme de vitesse $V$.
+    \\
+    \newline
+    Selon la deuxième loi de Newton:
+    \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}[t][1.75cm][t]{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                F_a\sin(\theta) + F_b\sin(\theta) &= ma
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}[t][1.75cm][t]{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                2F_T\sin(\theta) &= m\frac{v^2}{R}
+            \end{align*}
+        \end{minipage}
+    \end{center}
+    Où $R$ est le rayon du cercle dont l'arc $AB$ fait partie.
+    \newline
+
+    Noter que $m$ peut également être écrit comme:
+    
+    \begin{empheq}[box={\mymath}]{align*}
+        m &= \mu l
+    \end{align*}
+
+    Où
+
+    \begin{empheq}[box={\mymath}]{align*}
+        l &= R2\theta
+    \end{align*}
+    \newline
+    On considère que $\theta$ aura des valeurs faibles, donc $\sin(\theta) \approx \theta$.
+    En conséquence :
+    \begin{empheq}[box={\mymath}]{align*}
+        2 \cdot F_T \cdot \theta &= \mu \cdot R \cdot 2 \cdot \theta \cdot \frac{v^2}{R}
+    \end{align*}
+    Devient:
+    
+    \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                F_T &= \mu v^2
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{0.1\linewidth}
+            Ou
+        \end{minipage}%
+        \begin{minipage}{0.3\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                v &= \frac{F_T}{\mu}
+            \end{align*}
+        \end{minipage}
+    \end{center}
+
+    \subsubsection{Ondes progressives}
+    D'un point de vue mathématique, les ondes peuvent être décrites par une fonction $y$ qui accepte deux paramètres $(x,t)$.
+
+    \begin{empheq}[box={\mymath}]{align*}
+        y(x,t) &= f(x \pm vt)
+    \end{align*}
+    
+    \begin{itemize}
+        \item Avec \bf{-} onde progressive vers $x$ positif
+        \item Avec \bf{+} onde progressive vers $x$ négatif
+    \end{itemize}
+
+    \subsubsection{Ondes sinusoïdales progressives}
+
+    \begin{empheq}[box={\mymath}]{align*}
+        y(x,t) &= A\sin(kx \pm wt + \varphi)
+    \end{align*}
+
+
+    \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                \frac{dx}{dy}y
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{0.1\linewidth}
+            \Rightarrow
+        \end{minipage}%
+        \begin{minipage}{0.3\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                v &= \frac{\lambda}{T} = \lambda f
+            \end{align*}
+        \end{minipage}
+    \end{center}
+
+    Où
+
+    \begin{itemize}
+        \item $\lambda$ - Longueur d'onde
+        \item $T$ - Période d'oscillation
+        \item $f$ - Fréquence d'oscillation
+    \end{itemize}
+
+    \subsubsection{Ondes stationnaires dans une corde attachée aux extrémités}
+
+    \includegraphics[width=.35\paperwidth]{images/graph_l_lambda.pdf}
+    \includegraphics[width=.35\paperwidth]{images/graph_l_2lambda.pdf}
+
+    \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                \lambda_1 &= 2L
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{0.1\linewidth}
+            \Rightarrow
+        \end{minipage}%
+        \begin{minipage}{0.3\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                f_1 &= \frac{v}{2L}
+            \end{align*}
+        \end{minipage}
+    \end{center}
+
+    \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                \lambda_2 &= L
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{0.1\linewidth}
+            \Rightarrow
+        \end{minipage}%
+        \begin{minipage}{0.3\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                f_2 &= \frac{v}{L}
+            \end{align*}
+        \end{minipage}
+    \end{center}
+    \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                \lambda_3 &= \frac{2L}{3}
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{0.1\linewidth}
+            \Rightarrow
+        \end{minipage}%
+        \begin{minipage}{0.3\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                f_3 &= \frac{3v}{2L}
+            \end{align*}
+        \end{minipage}
+    \end{center}
+
+    \begin{center}
+        ...
+    \end{center}
+
+    \begin{center}
+        \vspace{-\baselineskip}
+        \begin{minipage}{0.4\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                \lambda_n &= \frac{2L}{n}
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{0.1\linewidth}
+            \Rightarrow
+        \end{minipage}%
+        \begin{minipage}{0.3\linewidth}
+            \begin{empheq}[box={\mymath}]{align*}
+                f_n &= \frac{nv}{2L}
+            \end{align*}
+        \end{minipage}
+    \end{center}
+    
+
+
 
     \subsection{Principe de l'expérience}
     L'expérience consiste en ces deux parties :
@@ -121,6 +319,17 @@
     \end{enumerate}
 
     \subsection{Schéma et montage de l’expérience}
+    Pour réaliser l'expérience, on a besoin d'un vibreur qui fait vibrer une corde à différentes fréquences. une extrémité de la corde est attachée au vibreur et l'autre passe dans une poulie. Un poids est accroché à la corde afin de la maintenir en tension.
+    \\
+    Dans notre cas, on a utilisé :
+    \begin{itemize}
+        \item Une corde
+        \item Un vibreur à fréquence variable
+        \item Une poulie
+        \item Des barres pour fixer le vibreur et la poulie
+    \end{itemize}  
+    \includegraphics[width=0.35\paperwidth]{images/schema_static.pdf}
+    \includegraphics[width=0.35\paperwidth]{images/schema_dynamic.pdf}
     \subsection{Déroulement de l'expérience}
     \subsubsection{Les mesures préalables}
     \begin{itemize}
