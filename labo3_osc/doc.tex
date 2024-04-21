@@ -87,20 +87,29 @@
     \section{Description de l'expérience}
     \subsection{Buts}
     \begin{itemize}
-        \item 
+        \item Étude du comportement des ondes stationnaires.
+        \item Application et comparaison de méthodes de calcul de la vitesse de propagation d'une onde dans une corde élastique.
     \end{itemize}
 
     \subsection{Éléments théoriques}
     \subsubsection{Les différentes grandeurs physiques rencontrées}
     \begin{minipage}{0.6\linewidth}
         \begin{itemize}
-            \item \textbf{ceva} - descriere
+            \item Différentes longueurs ($\bm{L, l', l''}$)
+            \item Différentes masses ($\bm{m, m_c}$)
+            \item Force de la pesanteur ($\bm{F}$)
+            \item Masse linéique de la corde ($\bm{\mu}$)
+            \item Fréquence de l'harmonique $n$ ($\bm{f_n}$)
         \end{itemize}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.4\linewidth}
         \begin{itemize}
-            \item[-] $\bm{[ceva]=unitate}$
+            \item[-] $\bm{[l]} =$ m
+            \item[-] $\bm{[m]} =$ g
+            \item[-] $\bm{[F]} =$ mN
+            \item[-] $\bm{[\mu]} =$ gm$^{-1}$
+            \item[-] $\bm{[f_n]} =$ Hz
         \end{itemize}   
     \end{minipage}
 
@@ -128,6 +137,7 @@
         \item On connecte l'agitateur à un générateur de courant alternatif réglable.
         \item En ajustant la fréquence et la tension (amplitude) du générateur, on génère les douze premières harmoniques du notre système.
     \end{itemize}
+    \newpage
     \section{Mesures}
     \subsection{Mesures constantes :}
     \begin{itemize}
@@ -185,7 +195,7 @@
     \subsection{Vitesse avec les harmoniques}
     Pour construire la régression linéaire, on partira de la formule suivante déduite dans la partie théorique :
     \begin{empheq}[box={\mymath}]{equation*}
-        f_n = \frac{v_{exp}}{2L} n
+        f_n = \frac{v_{exp}}{2L} \cdot n
     \end{equation*}
     On constate que la valeur $f_n$ est une fonction de $n$, et on voit aussi que $\frac{v_{exp}}{2L}$ est la pente de la fonction, qu'on note par $a$ pour les calculs qui suivre. \\ 
     On obtient, donc :
@@ -259,7 +269,7 @@ de la pente, on a :
     \end{equation*}
     On peut donc calculer l'incertitude à l'aide du calcul suivant :
     \begin{empheq}[box={\mymath}]{equation*}
-        \frac{\Delta v_{calc}}{|v_{calc}|} = \frac{1}{2} \cdot \frac{\Delta F / \mu}{F / \mu}
+        \frac{\Delta v_{calc}}{|v_{calc}|} = \frac{1}{2} \cdot \frac{\Delta F / \mu}{|F / \mu|}
     \end{equation*}
     On sait que :
     \begin{align*}
@@ -321,5 +331,13 @@ de la pente, on a :
     \end{itemize}
     En général, les deux méthodes sont deux bons outils pour calculer la vitesse, le seul facteur qui influence le choix de l'une des deux étant le niveau de précision dont on a besion dans les calculs que on fait ensuite avec cette vitesse.
     \section{Synthèse et conclusion}
+    Dans ce laboratoire, on a cherché à comprendre le comportement des ondes stationnaires et à appliquer les formules données par la théorie. \\
+    Afin de réaliser cet objectif, on a calculé la vitesse de propagation d'une onde de deux manières différentes :
+    \begin{itemize}
+        \item En utilisant la masse linéique de la corde $\mu$ et la force de pesanteur $F$.
+        \item En collectant des paires ($n$, $f_n$) pour les douze premières harmoniques de l'onde, puis en les utilisant pour construire une régression linéaire.
+    \end{itemize}
+    Le résultat de cette expérience est que on a démontré que on dispose de deux outils pratiques pour calculer cette vitesse, qui présentent différents niveaux de difficulté d'application et de précision des résultats. \\
+    En utilisant et en comparant les résultats des ces deux méthodes de calcul, on a également confirmé que les formules déduites par le raisonnement théorique correspondent à des résultats réels et tangibles.
 \end{document}
 
