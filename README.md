@@ -2,12 +2,16 @@
 
 Welcome to the repository containing our reports for Laboratory of Physics at Haute École Arc Neuchâtel 🇨🇭. Here, you'll find a collection of reports documenting the experiments conducted as part of the physics laboratory class. Each report provides a detailed analysis of the experiment, including observations, data, calculations, and conclusions.
 
+## 🌟 Authors
+
+- [Liviu Arsenescu](https://github.com/RicoLla13)
+- [Cătălin Bozan](https://github.com/catabozan)
 ## 📝 Table of Contents
 
 ### Reports before submission:
 
 * Labo 1: [PDF](labo_compiled/labo1_Arsenescu-Bozan.pdf) / [LaTeX](labo1_pendule/doc.tex)
-* Labo 2: [PDF](labo_compiled/labo2_Arsenescu-Bozan.pdf) / [LaTeX](labo1_pendule/doc.tex)
+* Labo 2: [PDF](labo_compiled/labo2_Arsenescu-Bozan.pdf) / [LaTeX](labo2_ballist/doc.tex)
 * Labo 3: [PDF](labo_compiled/labo3_Arsenescu-Bozan.pdf) / [LaTeX](labo3_osc/doc.tex)
 
 
