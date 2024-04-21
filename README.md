@@ -6,23 +6,23 @@ Welcome to the repository containing our reports for Laboratory of Physics at Ha
 
 ### Reports before submission:
 
-* Experiment 1:
-* Experiment 2:
-* Experiment 3:
+* Labo 1: [PDF](labo_compiled/labo1_Arsenescu-Bozan.pdf) / [LaTeX](labo1_pendule/doc.tex)
+* Labo 2: [PDF](labo_compiled/labo2_Arsenescu-Bozan.pdf) / [LaTeX](labo1_pendule/doc.tex)
+* Labo 3: [PDF](labo_compiled/labo3_Arsenescu-Bozan.pdf) / [LaTeX](labo3_osc/doc.tex)
 
 
 ### Reports after submission, with notes from the professor:
 
-* Experiment 1:
-* Experiment 2:
-* Experiment 3:
+* Labo 1: [PDF](labo_corrig/corr_Labo1_Arsenescu-Bozan.pdf)
+* Labo 2: [PDF](labo_corrig/corr_Labo2_Arsenescu-Bozan.pdf)
+* Labo 3: [PDF](labo_corrig/corr_Labo3_Arsenescu-Bozan.pdf)
 
 ## 🧪 Experiments Overview
 
 ## 📈 How to Use
 
 To view a specific report, simply click on the corresponding link in the Table of Contents above.  
-Each report is provided in PDF format, and you can also find the LaTeX file for each one by browsing the repository.
+Each report is provided in PDF and LaTeX format.
 
 ## 🤝 Contributing
 
