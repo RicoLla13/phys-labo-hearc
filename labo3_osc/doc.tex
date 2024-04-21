@@ -295,6 +295,31 @@ de la pente, on a :
         \Delta v_{\text{exp}} = 0.8 \, \text{ms}^{-1}
     \end{empheq}
     \subsection{Discussion des résultats :}
+    On a obtenu deux valeurs pour la vitesse:
+    \begin{align*}
+        v_{exp} = (23.6 \pm 0.8) \textrm{ ms}^{-1}
+        & \textrm{ et }
+        v_{calc} = (20 \pm 6) \textrm{ ms}^{-1}
+    \end{align*}
+    Ces résultats nous permettent de tirer les conclusions suivantes sur la manière de les atteindre :
+    \begin{itemize}
+        \item En utilisant la masse linéique $\mu$ et la force de la pesanteur $F$ :
+        \begin{itemize}
+            \item Cette façon d'obtenir la vitesse est très facile à mettre en pratique, car on n'a pas besoin d'une installation compliquée pour obtenir les mesures nécessaires.
+            \item L'inconvenient de cette méthode est que le résultat est très imprécis (on a obtenu une incertitude de 6 ms$^{-1}$, ce qui représente presque la moitié de la valeur obtenue pour la vitesse elle-même, et  pour des calculs plus prècis cela peut coûter cher).
+            \item L'incertitude élevée provient du fait que la formule elle-même dépend de nombreux produits, divisions et calculs avec des puissances :
+            \begin{equation*}
+                v_{calc} = \sqrt{\frac{F}{\mu}} = \sqrt{\frac{mgL}{m_c} \cdot \frac{l''}{l'}}
+            \end{equation*}
+        \end{itemize}
+        \item En faisant une régression linéaire avec les $n$ premières harmoniques :
+        \begin{itemize}
+            \item Cette méthode d'obtenir la vitesse est beaucoup plus précise que la précédente (une incertitude de 0.8 ms$^{-1}$ au lieu de 6 ms$^{-1}$), parce que on n'a que l'incertitude de la fréquence et de la longueur de l'installation qui affecte le résultat final.
+            \item L'inconvenient de cette méthode est que l'expérience nécessite beaucoup plus de préparation que la précédente, et que de nombreux facteurs peuvent conduire à des mesures qui s'écartent des valeurs idéales (par exemple, on ne sait pas si l'agitateur répond à la même fréquence que celle affichée sur le générateur).
+            \item On a toujours une incertitude assez élevée, car il este très difficile de prédire si la fréquence que on a récoltée est vraiment la fréquence théorique de l'harmonique que on génere.
+        \end{itemize}
+    \end{itemize}
+    En général, les deux méthodes sont deux bons outils pour calculer la vitesse, le seul facteur qui influence le choix de l'une des deux étant le niveau de précision dont on a besion dans les calculs que on fait ensuite avec cette vitesse.
     \section{Synthèse et conclusion}
 \end{document}
 
