@@ -84,21 +84,24 @@
     \newpage
 
     \pagenumbering{arabic}
+    \section{Remarques avant de commencer}
+    Comme on le verra dans la section suivante, pour calculer la masse linéique de la corde, on a besoin de la longueur totale de celle-ci. \\
+    Parce que on est des êtres humains et que on fait toujours des erreurs enfantines, on a oublié de mesurer cette grandeur. \\
+    Pour résoudre ce problème, on a utilisé la longueur mesurée entre l'agitateur et la poulie, ce qui n'a pas eu d'impact significatif sur les résultats et les conclusions.
     \section{Description de l'expérience}
     \subsection{Buts}
     \begin{itemize}
         \item Étude du comportement des ondes stationnaires.
         \item Application et comparaison de méthodes de calcul de la vitesse de propagation d'une onde dans une corde élastique.
     \end{itemize}
-
     \subsection{Éléments théoriques}
     \subsubsection{Les différentes grandeurs physiques rencontrées}
     \begin{minipage}{0.6\linewidth}
         \begin{itemize}
             \item Différentes longueurs ($\bm{L, l', l''}$)
             \item Différentes masses ($\bm{m, m_c}$)
-            \item Force de la pesanteur ($\bm{F}$)
-            \item Tension dans la corde ($\bm{F_T}$)
+            \item Différentes forces ($\bm{F, F_T}$)
+            \item Vitesse de propagation de l'onde ($\bm{v}$)
             \item Masse linéique de la corde ($\bm{\mu}$)
             \item Fréquence de l'harmonique $n$ ($\bm{f_n}$)
             \item Période d'oscillation $n$ ($\bm{T}$)
@@ -109,14 +112,38 @@
         \begin{itemize}
             \item[-] $\bm{[l]} =$ m
             \item[-] $\bm{[m]} =$ g
-            \item[-] $\bm{[F]} =$ N
-            \item[-] $\bm{[F_T]} =$ N
+            \item[-] $\bm{[F]} =$ mN
+            \item [-] $\bm{[v]} =$ ms$^{-1}$
             \item[-] $\bm{[\mu]} =$ gm$^{-1}$
             \item[-] $\bm{[f_n]} =$ Hz
             \item[-] $\bm{[T]} =$ s
         \end{itemize}   
     \end{minipage}
-
+    \subsubsection{Comment calculer la masse linéique de la corde}
+    On sait que la masse linéique représente la masse d'un objet par unité de longueur, on peut donc écrire l'équation suivante pour la corde :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \mu = \frac{m_c}{l_{tot}}
+    \end{equation*}
+    La longueur $l_{tot}$ est la longueur de la corde lorsqu'elle est complètement allongée. \\
+    Comme il est très difficile de mesurer la longueur $l_{tot}$, on peut calculer un "coefficient" d'allongement de la corde en utilisant une portion beaucoup plus courte d'elle, avec laquelle on fera le rapport entre la longueur initiale et la longueur après allongement. \\
+    \begin{minipage}{0.3\textwidth}
+        \begin{align*}
+            l_{tot} &= l_c \cdot \alpha \\
+            \alpha &= \frac{l''}{l'}
+        \end{align*}
+    \end{minipage} %
+    \begin{minipage}{0.7\textwidth}
+        \begin{itemize}
+            \item $\bm{l_c}$ - longueur de la corde au repos
+            \item $\bm{\alpha}$ - "coefficient" d'allongement
+            \item $\bm{l'}$ - longueur étalon
+            \item $\bm{l''}$ - longueur étalon après allongement
+        \end{itemize}
+    \end{minipage}
+    Alors, la masse linéique devient :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \mu = \frac{m_c}{l_c} \cdot \frac{l'}{l''}
+    \end{equation*}
     \subsubsection{Vitesse de propagation de l'onde dans la corde}
     On prends un morceau de corde et considère que $F_T$ est la tension de la corde qui est équivalente à la force gravitationnelle du poids $F$ et la masse linéique de la corde $\mu$.
     
