@@ -309,6 +309,103 @@
     \end{minipage}
 
     \section{Analyse des mesures et résultats}
+    Pour calculer le champ magnétique $B$ en faisant varier le courant ou l'angle, on construit une régression linéaire à l'aide de la formule suivante :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \delta m = \frac{IlBsin(\theta)}{g}
+    \end{empheq}
+    $l$ est la longueur du conducteur, donc $l = nL = (0.110 \pm 0.001)$ m.
+    \subsection{\texorpdfstring{$\delta m$}{delta m} en fonction du courant \textit{I}}
+    \pgfplotstableread[col sep=comma]{data/plot_I.csv}\plotIdata
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            % Scatter plot
+            \begin{axis}[
+                xlabel={$I$ (A)},
+                ylabel={$\delta m$ (g)},
+                legend pos=north east,
+                legend style={at={(0.25,0.05)}, anchor=south},
+                grid=both,
+                width=1\textwidth,
+                height=0.3\textheight,
+                x tick label style={
+                    /pgf/number format/.cd,
+                    precision=2,
+                    fixed,
+                    fixed zerofill,
+                },
+                y tick label style={
+                    /pgf/number format/.cd,
+                    precision=2,
+                    fixed,
+                    fixed zerofill,
+                },
+                xmin=0,
+                xmax=4.5,
+                ymin=-2.5,
+                ymax=-0,
+            ]
+                \addplot+[only marks, mark=x, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] table[x=I, x error=err_I, y=dm, y error=err_dm] {\plotIdata};
+
+                % Linear regression line
+                \addplot [red, thick] table[
+                    y={create col/linear regression={y=dm}}
+                ] {\plotIdata};
+                \xdef\slope{\pgfplotstableregressiona}
+                \xdef\intercept{\pgfplotstableregressionb}
+
+                % Add the equation of the line
+                \addlegendentry{Données}
+                \addlegendentry{Régr. Lin.: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+    \subsection{\texorpdfstring{$\delta m$}{delta m} en fonction de l'angle \texorpdfstring{$\theta$}{theta}}
+    \pgfplotstableread[col sep=comma]{data/plot_T.csv}\plotTdata
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            % Scatter plot
+            \begin{axis}[
+                xlabel={$sin(\theta)$},
+                ylabel={$\delta m$ (g)},
+                legend pos=north east,
+                legend style={at={(0.3,0.05)}, anchor=south},
+                grid=both,
+                width=1\textwidth,
+                height=0.3\textheight,
+                x tick label style={
+                    /pgf/number format/.cd,
+                    precision=2,
+                    fixed,
+                    fixed zerofill,
+                },
+                y tick label style={
+                    /pgf/number format/.cd,
+                    precision=2,
+                    fixed,
+                    fixed zerofill,
+                },
+                xmin=-0.1,
+                xmax=1.1,
+                ymin=-2.5,
+                ymax=-0,
+            ]
+                \addplot+[only marks, mark=x, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] table[x=T, x error=err_T, y=dm, y error=err_dm] {\plotTdata};
+
+                % Linear regression line
+                \addplot [red, thick] table[
+                    y={create col/linear regression={y=dm}}
+                ] {\plotTdata};
+                \xdef\slope{\pgfplotstableregressiona}
+                \xdef\intercept{\pgfplotstableregressionb}
+
+                % Add the equation of the line
+                \addlegendentry{Données}
+                \addlegendentry{Régr. Lin.: $y = \pgfmathprintnumber{\slope}x + \pgfmathprintnumber{\intercept}$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
     \subsection{Choix et calcul d'incertitudes}
     \subsubsection{Choix des incertitude :}
     \subsubsection{Calcul d'incertitudes}
