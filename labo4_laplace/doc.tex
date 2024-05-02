@@ -17,6 +17,7 @@
 \usepackage{float}
 \usepackage{silence}
 \WarningFilter{caption}{The option `hypcap=true' will be ignored}
+\WarningFilter{latex}{Underfull \hbox}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -89,7 +90,7 @@
     \subsection{Buts}
     \begin{itemize}
         \item Étude de la force de Laplace
-        \item Démontrer la dépendance linéaire de la force par rapport au champ magnétique $\bm{B}$
+        \item Démontrer la dépendance linéaire de la force par rapport au courent électrique, et l'angle $\theta$
     \end{itemize}
 
     \subsection{Éléments théoriques}
@@ -108,7 +109,13 @@
     \hfill
     \begin{minipage}{0.4\linewidth}
         \begin{itemize}
-            \item[-] $\bm{[ceva]=unitate}$
+            \item[-] $\bm{[F_L]=}$ N
+            \item[-] $\bm{P, N}=$ N 
+            \item[-] $\bm{I}=$ A 
+            \item[-] $\bm{l}=$ m 
+            \item[-] $\bm{\theta}=$ dégrées 
+            \item[-] $\bm{m}=$ g 
+            \item[-] $\bm{g}=$ ms$^{-1}$ 
         \end{itemize}   
     \end{minipage}
 
@@ -269,44 +276,41 @@
         \end{itemize}
     \end{minipage}
     \subsubsection{\texorpdfstring{$\theta$}{theta} variable}
-    \begin{minipage}{0.4\textwidth}
+    \begin{table}[H]
         \centering
-        \begin{tabular}{c|c|c}
+        \begin{tabular}{c|c|c|c|c}
             \toprule
-            $\theta$(\textdegree) & $\delta m$(g) & $\Delta(\delta m)$(g) \\
+            $\theta$(\textdegree) & $\delta m$(g) & $\Delta(\delta m)$(g) & sin($\theta$) & $\Delta$sin($\theta$) \\
             \midrule
-            0  &  0.09 & 0.02 \\
-            5  & -0.10 & 0.02 \\
-            10 & -0.30 & 0.02 \\
-            15 & -0.49 & 0.02 \\
-            20 & -0.66 & 0.02 \\
-            25 & -0.85 & 0.02 \\
-            30 & -1.01 & 0.02 \\
-            35 & -1.17 & 0.02 \\
-            40 & -1.33 & 0.02 \\
-            45 & -1.46 & 0.02 \\
-            50 & -1.58 & 0.02 \\
-            55 & -1.69 & 0.02 \\
-            60 & -1.79 & 0.02 \\
-            65 & -1.88 & 0.02 \\
-            70 & -1.94 & 0.02 \\
-            75 & -2.00 & 0.02 \\
-            80 & -2.03 & 0.02 \\
-            85 & -2.06 & 0.02 \\
-            90 & -2.13 & 0.02 \\
+            0  &  0.09 & 0.02 & 0.00 & 0.03 \\
+            5  & -0.10 & 0.02 & 0.09 & 0.03 \\
+            10 & -0.30 & 0.02 & 0.17 & 0.03 \\
+            15 & -0.49 & 0.02 & 0.26 & 0.03 \\
+            20 & -0.66 & 0.02 & 0.34 & 0.03 \\
+            25 & -0.85 & 0.02 & 0.42 & 0.03 \\
+            30 & -1.01 & 0.02 & 0.50 & 0.03 \\
+            35 & -1.17 & 0.02 & 0.57 & 0.03 \\
+            40 & -1.33 & 0.02 & 0.64 & 0.03 \\
+            45 & -1.46 & 0.02 & 0.71 & 0.02 \\
+            50 & -1.58 & 0.02 & 0.77 & 0.02 \\
+            55 & -1.69 & 0.02 & 0.82 & 0.02 \\
+            60 & -1.79 & 0.02 & 0.87 & 0.02 \\
+            65 & -1.88 & 0.02 & 0.91 & 0.01 \\
+            70 & -1.94 & 0.02 & 0.94 & 0.01 \\
+            75 & -2.00 & 0.02 & 0.97 & 0.01 \\
+            80 & -2.03 & 0.02 & 0.98 & 0.01 \\
+            85 & -2.06 & 0.02 & 1.00 & 0.01 \\
+            90 & -2.13 & 0.02 & 1.00 & 0.01 \\
             \bottomrule
         \end{tabular}
         \captionof{table}{$\theta$ variable}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}{0.6\textwidth}
-        Légende :
-        \begin{itemize}
-            \item $\theta$ - l'angle entre les vecteurs $I \vec{l}$ et $\vec{B}$ (en degrées)
-            \item $\delta m$ - différence entre les masses $m_1$ et $m_0$ (en g)
-            \item $\Delta(\delta m)$ - incetitude de $\delta m$ (en g)
-        \end{itemize}
-    \end{minipage}
+    \end{table}
+    Légende :
+    \begin{itemize}
+        \item $\theta$ - l'angle entre les vecteurs $I \vec{l}$ et $\vec{B}$ (en degrées)
+        \item $\delta m$ - différence entre les masses $m_1$ et $m_0$ (en g)
+        \item $\Delta(\delta m)$ - incetitude de $\delta m$ (en g)
+    \end{itemize}
 
     \section{Analyse des mesures et résultats}
     Pour calculer le champ magnétique $B$ en faisant varier le courant ou l'angle, on construit une régression linéaire à l'aide de la formule suivante :
@@ -315,6 +319,10 @@
     \end{empheq}
     $l$ est la longueur du conducteur, donc $l = nL = (0.110 \pm 0.001)$ m.
     \subsection{\texorpdfstring{$\delta m$}{delta m} en fonction du courant \textit{I}}
+    La fonction que on a utilisée pour créer la régression linéaire :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \delta m = \frac{lBsin(\theta)}{g} \cdot I
+    \end{empheq}
     \pgfplotstableread[col sep=comma]{data/plot_I.csv}\plotIdata
     \begin{figure}[H]
         \centering
@@ -360,7 +368,15 @@
             \end{axis}
         \end{tikzpicture}
     \end{figure}
+    Où on note $a_1$ la pente de la fonction. Avec ça, on obtient :
+    \begin{empheq}[box={\mymath}]{equation*}
+        B_1 = (-49.0 \pm 0.4) \textrm{ mT}
+    \end{empheq}
     \subsection{\texorpdfstring{$\delta m$}{delta m} en fonction de l'angle \texorpdfstring{$\theta$}{theta}}
+    La fonction que on a utilisée pour créer la régression linéaire :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \delta m = \frac{lBI}{g} \cdot sin(\theta)
+    \end{empheq}
     \pgfplotstableread[col sep=comma]{data/plot_T.csv}\plotTdata
     \begin{figure}[H]
         \centering
@@ -386,10 +402,10 @@
                     fixed,
                     fixed zerofill,
                 },
-                xmin=-0.1,
-                xmax=1.1,
+                xmin=-0.15,
+                xmax=1.05,
                 ymin=-2.5,
-                ymax=-0,
+                ymax=0.15,
             ]
                 \addplot+[only marks, mark=x, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] table[x=T, x error=err_T, y=dm, y error=err_dm] {\plotTdata};
 
@@ -406,9 +422,59 @@
             \end{axis}
         \end{tikzpicture}
     \end{figure}
+    Où on note $a_2$ la pente de la fonction. Avec ça, on obtient :
+    \begin{empheq}[box={\mymath}]{equation*}
+        B_2 = (-48.2 \pm 0.5) \textrm{ mT}
+    \end{empheq}
     \subsection{Choix et calcul d'incertitudes}
     \subsubsection{Choix des incertitude :}
+    \begin{itemize}
+        \item Pour le courant électrique : on a examiné la fluctuation globale de l'alimentation électrique, et on a remarqué que on a une incertitude de lecture de $\Delta I = 0.1$ A
+        \item Pour l'angle : on a déplacé très lentement la tête de la bobine et, à $\Delta \theta = 2$\textdegree près, on n'a constaté aucun changement dans l'expérience
+        \item Pour la longueur de la section de la bobine : on a choisi l'incertitude indiquée sur l'instrument de mesure
+        \item Pour la mesure au teslamètre : on a choisi la valeur indiquée par l'appareil avant de s'approcher de l'aimant
+        \item Pour les masses : on a choisi l'incertitude indiquée par la balance
+    \end{itemize}
     \subsubsection{Calcul d'incertitudes}
+    On sait que la différence entre $m_0$ et $m_1$ se calcule comme suit :
+    \begin{equation*}
+        \delta m = |m_1 - m_2|
+    \end{equation*}
+    Puisqu'il s'agit de la différence entre les deux, on peut calculer l'incertitude en additionnant leurs incertitudes :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \Delta(\delta m) = 0.2 \textrm{ g}
+    \end{empheq}
+    Pour calculer l'incertitude de la fonction sin, on utilise la formule suivante :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \Delta sin(\theta) = |cos(\theta)| \cdot \Delta \theta
+    \end{empheq}
+    Pour la première pente obtenue, on calcule l'incertitude comme suit :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \Delta B_1 = (\frac{\Delta a_1}{a_1} + \frac{\Delta l}{l}) \cdot B_1
+    \end{empheq}
+    Et pour la deuxième pente obtenue, on fait le calcul suivant :
+    \begin{empheq}[box={\mymath}]{equation*}
+        \Delta B_2 = (\frac{\Delta a_2}{a_2} + \frac{\Delta{lI}}{lI}) \cdot B_2
+    \end{empheq}
     \subsection{Discussion des résultats :}
+    On a obtenu trois valeurs pour le champ magnétique :
+    \begin{align*}
+        B_1 &= (-49.0 \pm 0.4) \textrm{ mT} \\
+        B_2 &= (-48.2 \pm 0.5) \textrm{ mT} \\
+        B_3 &= (-43.3 \pm 0.4) \textrm{ mT}
+    \end{align*}
+    Le fait que ces valeurs soient très proches les unes des autres permet de tirer les conclusions suivantes :
+    \begin{itemize}
+        \item La fonction $\delta m$ dépend linéairement de $I$ et de $\theta$, donc la fonction $||\vec{F_L}||$ en dépend également.
+        \item On peut également en déduire que la force $\vec{F_L}$ créée par la bobine est exactement la même, mais de signe opposé dans le système de force de l'aimant, mettant ainsi en évidence le principe d'action-réaction.
+    \end{itemize}
     \section{Synthèse et conclusion}
+    Dans ce laboratoire, on a cherché à comprendre et à démontrer les formules trouvées dans le cadre théorique de la force de Laplace. \\
+    Pour atteindre cet objectif, on a calculé le champ magnétique d'un aimant de trois manières différentes :
+    \begin{itemize}
+        \item On l'a trouvé en faisant varier uniquement le courant électrique $I$
+        \item On l'a trouvé en faisant varier uniquement l'angle $\theta$ 
+        \item On a utilisé un teslamètre pour le mesurer
+    \end{itemize}
+    Le résultat de cette expérience est que on a prouvé que on a bien une dépendance linéaire entre $||\vec{F_L}||$ et les termes qui composent sa formule, et que la force $\vec{F_L}$ existe à la fois dans la bobine et dans l'aimant. 
 \end{document}
