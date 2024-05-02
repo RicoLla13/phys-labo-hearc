@@ -15,6 +15,8 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{float}
+\usepackage{silence}
+\WarningFilter{caption}{The option `hypcap=true' will be ignored}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -225,6 +227,87 @@
     \end{itemize}
 
     \section{Mesures}
+    \subsection{Mesures constantes :}
+    \begin{itemize}
+        \item $L = (0.010 \pm 0.001)$ m - longueur de la section de la bobine
+        \item $n = 11$ - nombre de spires
+        \item $m_0 = (70.40 \pm 0.01)$ g - masse de l'aimant
+        \item $\Delta I = \pm 0.01$ A - incertitude sur le courant électrique
+        \item $\Delta \theta = \pm 2$\textdegree - incertitude de l'angle
+        \item $B_3 = -43.3$ mT - champ magnétique mesuré avec le teslamètre
+        \item $\Delta B_3 = \pm 0.4$ mT - incertitude du champ magnétique
+    \end{itemize}
+    \subsection{Tableaux des mesures :}
+    \subsubsection{\textit{I} variable}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{tabular}{c|c|c}
+            \toprule
+            $I$(A) & $\delta m$(g) & $\Delta(\delta m)$(g) \\
+            \midrule
+            0.41 & -0.12 & 0.02 \\
+            0.81 & -0.33 & 0.02 \\
+            1.20 & -0.56 & 0.02 \\
+            1.60 & -0.77 & 0.02 \\
+            2.01 & -1.01 & 0.02 \\
+            2.40 & -1.22 & 0.02 \\
+            2.81 & -1.46 & 0.02 \\
+            3.21 & -1.68 & 0.02 \\
+            3.61 & -1.90 & 0.02 \\
+            4.01 & -2.13 & 0.02 \\
+            \bottomrule
+        \end{tabular}
+        \captionof{table}{$I$ variable}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.6\textwidth}
+        Légende :
+        \begin{itemize}
+            \item $I$ - courant électrique (en A)
+            \item $\delta m$ - différence entre les masses $m_1$ et $m_0$ (en g)
+            \item $\Delta(\delta m)$ - incetitude de $\delta m$ (en g)
+        \end{itemize}
+    \end{minipage}
+    \subsubsection{\texorpdfstring{$\theta$}{theta} variable}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{tabular}{c|c|c}
+            \toprule
+            $\theta$(\textdegree) & $\delta m$(g) & $\Delta(\delta m)$(g) \\
+            \midrule
+            0  &  0.09 & 0.02 \\
+            5  & -0.10 & 0.02 \\
+            10 & -0.30 & 0.02 \\
+            15 & -0.49 & 0.02 \\
+            20 & -0.66 & 0.02 \\
+            25 & -0.85 & 0.02 \\
+            30 & -1.01 & 0.02 \\
+            35 & -1.17 & 0.02 \\
+            40 & -1.33 & 0.02 \\
+            45 & -1.46 & 0.02 \\
+            50 & -1.58 & 0.02 \\
+            55 & -1.69 & 0.02 \\
+            60 & -1.79 & 0.02 \\
+            65 & -1.88 & 0.02 \\
+            70 & -1.94 & 0.02 \\
+            75 & -2.00 & 0.02 \\
+            80 & -2.03 & 0.02 \\
+            85 & -2.06 & 0.02 \\
+            90 & -2.13 & 0.02 \\
+            \bottomrule
+        \end{tabular}
+        \captionof{table}{$\theta$ variable}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.6\textwidth}
+        Légende :
+        \begin{itemize}
+            \item $\theta$ - l'angle entre les vecteurs $I \vec{l}$ et $\vec{B}$ (en degrées)
+            \item $\delta m$ - différence entre les masses $m_1$ et $m_0$ (en g)
+            \item $\Delta(\delta m)$ - incetitude de $\delta m$ (en g)
+        \end{itemize}
+    \end{minipage}
+
     \section{Analyse des mesures et résultats}
     \subsection{Choix et calcul d'incertitudes}
     \subsubsection{Choix des incertitude :}
