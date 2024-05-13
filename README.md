@@ -10,18 +10,18 @@ Welcome to the repository containing our reports for Laboratory of Physics at Ha
 
 ### Reports before submission:
 
-* Labo 1: [PDF](labo_compiled/labo1_Arsenescu-Bozan.pdf) / [LaTeX](labo1_pendule/doc.tex)
-* Labo 2: [PDF](labo_compiled/labo2_Arsenescu-Bozan.pdf) / [LaTeX](labo2_ballist/doc.tex)
-* Labo 3: [PDF](labo_compiled/labo3_Arsenescu-Bozan.pdf) / [LaTeX](labo3_osc/doc.tex)
+* Labo 1 (Pendulum)        : [PDF](labo_compiled/labo1_Arsenescu-Bozan.pdf) / [LaTeX](labo1_pendule/doc.tex)
+* Labo 2 (Ballistics)      : [PDF](labo_compiled/labo2_Arsenescu-Bozan.pdf) / [LaTeX](labo2_ballist/doc.tex)
+* Labo 3 (Oscillations)    : [PDF](labo_compiled/labo3_Arsenescu-Bozan.pdf) / [LaTeX](labo3_osc/doc.tex)
+* Labo 4 (Force of Laplace): [PDF](labo_compiled/labo4_Arsenescu-Bozan.pdf) / [LaTeX](labo4_laplace/doc.tex)
 
 
 ### Reports after submission, with notes from the professor:
 
-* Labo 1: [PDF](labo_corrig/corr_Labo1_Arsenescu-Bozan.pdf)
-* Labo 2: [PDF](labo_corrig/corr_Labo2_Arsenescu-Bozan.pdf)
-* Labo 3: [PDF](labo_corrig/corr_Labo3_Arsenescu-Bozan.pdf)
-
-## 🧪 Experiments Overview
+* Labo 1 (Pendulum)        : [PDF](labo_corrig/corr_Labo1_Arsenescu-Bozan.pdf)
+* Labo 2 (Ballistics)      : [PDF](labo_corrig/corr_Labo2_Arsenescu-Bozan.pdf)
+* Labo 3 (Oscillations)    : [PDF](labo_corrig/corr_Labo3_Arsenescu-Bozan.pdf)
+* Labo 4 (Force of Laplace): [PDF](labo_corrig/corr_Labo4_Arsenescu-Bozan.pdf)
 
 ## 📈 How to Use
 
