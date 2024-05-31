@@ -123,11 +123,6 @@
 
 \begin{frame}
     \begin{tikzpicture}[remember picture,overlay]
-        \node [anchor=south east] at (current page.south east) {%
-            \includegraphics[scale=0.2]{images/lab_elements.png}
-        };
-    \end{tikzpicture}
-    \begin{tikzpicture}[remember picture,overlay]
         \node [anchor=north west] at ([xshift=1.4cm,yshift=-1cm]current page.north west) {%
             \begin{minipage}{0.5\textwidth}
                 \Huge\textbf{Lois :} \\
@@ -136,19 +131,13 @@
         };
     \end{tikzpicture}
     \begin{tikzpicture}[remember picture,overlay]
-        \node [anchor=center] at (current page.center) {%
-            \begin{minipage}{0.5\textwidth}
-                \huge 
-                \begin{empheq}[box={\mymath}]{equation*}
+        \node [anchor=south west] at ([xshift=1.4cm,yshift=1cm]current page.south west) {%
+            \begin{minipage}{0.3\textwidth}
+                \Large 
+                \noindent \begin{empheq}[box={\mymath}]{equation*}
                     \frac{1}{f} = \frac{1}{p} + \frac{1}{q}
                 \end{empheq}
-            \end{minipage}
-        };
-    \end{tikzpicture}
-    \begin{tikzpicture}[remember picture,overlay]
-        \node [anchor=south] at ([yshift=1cm]current page.south) {%
-            \begin{minipage}{0.25\textwidth}
-                \centering
+                \normalsize
                 \begin{itemize}
                     \item $f$ - distance focale
                     \item $p$ - distance objet
@@ -162,15 +151,20 @@
             \tiny \color{black}\textbf{@HE-Arc, Laboratoire de physique}
         };
     \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=south east] at ([xshift=-0.5cm, yshift=1cm]current page.south east) {%
+            \includegraphics[width=0.55\pagewidth]{images/formule_f.pdf}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=south west] at (current page.south west) {%
+            \tiny \color{black}\textbf{@HE-Arc, Laboratoire de physique}
+        };
+    \end{tikzpicture}
 \end{frame}
 
 
 \begin{frame}
-    \begin{tikzpicture}[remember picture,overlay]
-        \node [anchor=south east] at (current page.south east) {%
-            \includegraphics[scale=0.2]{images/lab_elements.png}
-        };
-    \end{tikzpicture}
     \begin{tikzpicture}[remember picture,overlay]
         \node [anchor=north west] at ([xshift=1.4cm,yshift=-1cm]current page.north west) {%
             \begin{minipage}{0.5\textwidth}
@@ -180,25 +174,24 @@
         };
     \end{tikzpicture}
     \begin{tikzpicture}[remember picture,overlay]
-        \node [anchor=center] at (current page.center) {%
-            \begin{minipage}{0.5\textwidth}
-                \huge 
+        \node [anchor=south west] at ([xshift=1.4cm,yshift=1cm]current page.south west) {%
+            \begin{minipage}{0.3\textwidth}
+                \Large
                 \begin{empheq}[box={\mymath}]{equation*}
                     m = \frac{y_I}{y_O} = -\frac{q}{p}
                 \end{empheq}
-            \end{minipage}
-        };
-    \end{tikzpicture}
-    \begin{tikzpicture}[remember picture,overlay]
-        \node [anchor=south] at ([yshift=1cm]current page.south) {%
-            \begin{minipage}{0.25\textwidth}
-                \centering
+                \normalsize
                 \begin{itemize}
                     \item $m$ - grandissement
                     \item $y_I$ - hauteur image
                     \item $y_O$ - hauteur objet
                 \end{itemize}
             \end{minipage}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=south east] at ([xshift=-0.5cm, yshift=1cm]current page.south east) {%
+            \includegraphics[width=0.55\pagewidth]{images/formule_m.pdf}
         };
     \end{tikzpicture}
     \begin{tikzpicture}[remember picture,overlay]
@@ -211,12 +204,30 @@
 \begin{frame}
     \begin{tikzpicture}[remember picture,overlay]
         \node [anchor=north west] at ([xshift=1.4cm,yshift=-1cm]current page.north west) {%
-            \color{black}\Huge\textbf{Schéma de l'expérience}
+            \color{black}\Huge\textbf{Déroulement de l'expérience}
         };
     \end{tikzpicture}
     \begin{tikzpicture}[remember picture,overlay]
         \node [anchor=south] at (current page.south) {%
             \includegraphics[width=0.8\pagewidth]{images/schema_exp.pdf}
+        };
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=north west] at ([xshift=1.4cm,yshift=-1cm]current page.north west) {%
+            \color{black}\Huge\textbf{Déroulement de l'expérience}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=south west] at ([xshift=1cm, yshift=1cm]current page.south west) {%
+            \includegraphics[width=0.35\pagewidth]{images/projector.jpg}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=south east] at ([xshift=-1cm, yshift=1cm]current page.south east) {%
+            \includegraphics[width=0.35\pagewidth]{images/measuring.jpg}
         };
     \end{tikzpicture}
 \end{frame}
@@ -364,6 +375,27 @@
 
 \begin{frame}
     \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=north west] at ([xshift=1.4cm,yshift=-1cm]current page.north west) {%
+            \begin{minipage}{0.5\textwidth}
+                \Huge\textbf{Mesures :} \\
+                \Large\textbf{Loi du grandissement}
+            \end{minipage}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=center] at ([yshift=-0.5cm]current page.center) {%
+            \includegraphics[width=0.7\pagewidth]{images/grandi.pdf}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=south west] at (current page.south west) {%
+            \tiny \color{black}\textbf{@HE-Arc, Laboratoire de physique}
+        };
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+    \begin{tikzpicture}[remember picture,overlay]
         \node [anchor=south east] at (current page.south east) {%
             \includegraphics[scale=0.2]{images/lab_elements.png}
         };
@@ -398,11 +430,6 @@
 
 \begin{frame}
     \begin{tikzpicture}[remember picture,overlay]
-        \node [anchor=south east] at (current page.south east) {%
-            \includegraphics[scale=0.2]{images/lab_elements.png}
-        };
-    \end{tikzpicture}
-    \begin{tikzpicture}[remember picture,overlay]
         \node [anchor=north west] at ([xshift=1.4cm,yshift=-1cm]current page.north west) {%
             \color{black}\Huge\textbf{Conclusion}
         };
@@ -419,8 +446,50 @@
         };
     \end{tikzpicture}
     \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=east] at ([xshift=-1.4cm]current page.east) {%
+            \begin{minipage}{0.4\textwidth}
+                \begin{empheq}[box={\mymath}]{equation*}
+                    f_{calc} = (9.8 \pm 0.2) \textrm{cm}
+                \end{empheq}
+                \begin{empheq}[box={\mymath}]{equation*}
+                    f_{fab} = (10 \pm 0.1) \textrm{cm}
+                \end{empheq}
+                \vspace{1cm}
+                \begin{empheq}[box={\mymath}]{equation*}
+                    m_y = (-7.1 \pm 0.4)
+                \end{empheq}
+                \begin{empheq}[box={\mymath}]{equation*}
+                    m_{pq} = (-7.1 \pm 0.1)
+                \end{empheq}
+            \end{minipage}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
         \node [anchor=south west] at (current page.south west) {%
             \tiny \color{black}\textbf{@HE-Arc, Laboratoire de physique}
+        };
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=south east] at (current page.south east) {%
+            \includegraphics[scale=0.2]{images/lab_elements.png}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=center] at (current page.center) {%
+            \begin{minipage}{\textwidth}
+                \centering
+                \color{black}\Huge\textbf{Merci beaucoup} \\
+                \color{black}\Large\textbf{Questions ?} \\
+                \vspace{1cm}
+            \end{minipage}
+        };
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [anchor=south west] at (current page.south west) {%
+            \includegraphics[scale=0.7]{images/logo_hearc_big.eps}
         };
     \end{tikzpicture}
 \end{frame}
