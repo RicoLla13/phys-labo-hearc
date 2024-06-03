@@ -10,10 +10,11 @@ Welcome to the repository containing our reports for Laboratory of Physics at Ha
 
 ### Reports before submission:
 
-* Labo 1 (Pendulum)        : [PDF](labo_compiled/labo1_Arsenescu-Bozan.pdf) / [LaTeX](labo1_pendule/doc.tex)
-* Labo 2 (Ballistics)      : [PDF](labo_compiled/labo2_Arsenescu-Bozan.pdf) / [LaTeX](labo2_ballist/doc.tex)
-* Labo 3 (Oscillations)    : [PDF](labo_compiled/labo3_Arsenescu-Bozan.pdf) / [LaTeX](labo3_osc/doc.tex)
-* Labo 4 (Force of Laplace): [PDF](labo_compiled/labo4_Arsenescu-Bozan.pdf) / [LaTeX](labo4_laplace/doc.tex)
+* Labo 1 (Pendulum)             : [PDF](labo_compiled/labo1_Arsenescu-Bozan.pdf) / [LaTeX](labo1_pendule/doc.tex)
+* Labo 2 (Ballistics)           : [PDF](labo_compiled/labo2_Arsenescu-Bozan.pdf) / [LaTeX](labo2_ballist/doc.tex)
+* Labo 3 (Oscillations)         : [PDF](labo_compiled/labo3_Arsenescu-Bozan.pdf) / [LaTeX](labo3_osc/doc.tex)
+* Labo 4 (Force of Laplace)     : [PDF](labo_compiled/labo4_Arsenescu-Bozan.pdf) / [LaTeX](labo4_laplace/doc.tex)
+* Labo 5 (Lenses, presentation) : [PDF](labo_compiled/labo5_Arsenescu-Bozan.pdf) / [LaTeX](labo5_optique/doc.tex)
 
 
 ### Reports after submission, with notes from the professor:
