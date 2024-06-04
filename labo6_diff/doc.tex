@@ -1,0 +1,128 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[left=3cm, right=3cm, top=2.5cm, bottom=2.5cm, headheight=38.40865pt]{geometry} % Adjusted headheight
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplotstable}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{empheq}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{silence}
+\usepackage{multirow}
+\WarningFilter{caption}{The option `hypcap=true' will be ignored}
+\WarningFilter{latex}{Underfull \hbox}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+    }
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\pgfplotsset{compat=1.18}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+\renewcommand{\contentsname}{Table des Matières}
+\renewcommand{\tablename}{Tableau}
+
+\title{Interférences et diffraction de la lumière}
+\author{Liviu Arsenescu, Cătălin Bozan}
+\date{28.05.2024}
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter,
+    tcbox raise base,
+    enhanced,
+    colframe=black,
+    colback=white,
+    boxrule=1pt,
+    drop shadow={
+        xshift=3pt, % Removed 'shadow' prefix
+        yshift=-3pt, % Removed 'shadow' prefix
+        opacity=1
+    },
+    #1
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=4cm]{hearclogo.png}}
+\lhead{\thepage}
+\setlength{\headsep}{30pt}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{\fill}
+            \Huge \textbf{Interférences et diffraction de la lumière} \\
+            \Large Rapport du Laboratoire \\
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=7cm]{hearclogo.png}
+            \end{figure}
+            \vspace{\fill}
+            \Large Liviu Arsenescu, Cătălin Bozan \\
+            28.05.2024
+
+            \vspace*{\fill}
+        \end{center}
+    \end{titlepage}
+
+    \section{Buts}
+    \begin{itemize}
+        \item Étudier le caractère ondulatoire de la lumière
+        \item Observer la diffraction de la lumière
+        \item Observer les interférences
+        \item Utiliser des objets ordinaires (cheveux) pour provoquer les deux effets
+    \end{itemize}
+    \section{Comment atteindre les buts}
+    \begin{itemize}
+        \item On fait passer un laser à travers une fente simple, puis on mesure les 8 premièrs couples de ($m$, $y$) pour enfin calculer la longueur d'onde de la lumière de laser
+        \item On fait passer un laser à travers une fente double, puis on mesure les 8 premièrs couples de ($m$, $y$), et enfin, avec la longueur d'onde calculé avant, on calcule la distance $d$ entre les deux fentes
+        \item On fait passer le laser à travers un cheveux, puis on calcule son diamètre avec les cinq premièrs couples de ($m$, $y$), et la longuer d'onde $\lambda_{exp}$ 
+    \end{itemize}
+    \section{Résultats}
+    \begin{minipage}{\textwidth}
+        \centering
+        \begin{tabular}{c|c|c|c}
+            \toprule
+              & 1. Single Slit & 2. Double Slit & 3. Cheveux \\
+            \toprule
+            m & $y$ (mm)  & $y$ (mm) & $y$ (mm) \\
+            \midrule
+            1 & 2.2  & 1.4  & 5    \\
+            2 & 4.5  & 3    & 10.5 \\
+            3 & 7    & 4.3  & 16   \\ 
+            4 & 10.4 & 5.9  & 21.3 \\
+            5 & 11.6 & 7.4  & 27   \\
+            6 & 14   & 9.1  &      \\
+            7 & 16.4 & 10.4 &      \\
+            8 & 18.9 & 12.3 &      \\
+            \toprule
+              & $\lambda$ (nm) & $d$ (mm) & $a$ ($\mu$m) \\
+            \toprule
+              & 688 & 0.25 & 69 \\
+            \toprule
+              & $\Delta \lambda$ (nm) & $\Delta d$ (mm) & $\Delta a$ ($\mu$m) \\
+            \toprule
+              & 63 & 0.03 & 7 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \section{Conclusions}
+    On peut constater que les résultats se situent dans les fourchettes attendues ($\lambda_{exp} \in (650 \pm 20) \textrm{ nm}$, $d \in (0.25 \pm 0.01) \textrm{ mm}$, $a \in [40; 100]$ \textrm{$\mu$m}). \\
+    On peut donc conclure que les objectifs ont été atteints, et que les lois données par la théorie ont été démontrées avec succès.
+\end{document}
